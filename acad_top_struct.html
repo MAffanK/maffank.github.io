@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Topology optimization of a structure problem - Affan Khan</title>
+    <title>Generative Design for Topology Optimization - Affan Khan</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -22,6 +22,7 @@
                     <li><a href="index.html#top"><span class="icon solid fa-home">Intro</span></a></li>
                     <li><a href="index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
                     <li><a href="index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
+                    <li><a href="index.html#accolades"><span class="icon solid fa-trophy">Accolades</span></a></li>
                     <li><a href="index.html#contact"><span class="icon solid fa-envelope">Contact</span></a></li>
                 </ul>
             </nav>
@@ -39,67 +40,69 @@
             <div class="container">
 
                 <header>
-                    <h2 class="section-title">Topology optimization of a structural problem</h2>
-                    <p>An M.Tech project focusing on fluid dynamics and simulation.</p>
+                    <h2 class="section-title">Generative Design Framework for Structural Topology Optimization</h2>
+                    <p>An M.Tech project combining Machine Learning with Finite Element Analysis (FEA).</p>
                 </header>
 
-                <a href="#" class="image featured"><img src="images/cfd-banner.jpg" alt="CFD Simulation Banner" /></a>
-
-                <div style="text-align: left; margin-top: 2em;">
-                    <h3>Project Overview</h3>
-                    <p>
-                        This project involved a comprehensive Computational Fluid Dynamics (CFD) analysis of a new
-                        turbine blade design aimed at improving aerodynamic efficiency. The primary objective was to
-                        simulate airflow under various operational conditions to identify areas of turbulence and
-                        pressure loss. Using ANSYS Fluent, a 3D model was meshed and subjected to rigorous testing to
-                        validate its performance against theoretical calculations.
-                    </p>
-
-                    <h3>Methodology & Tools</h3>
-                    <p>
-                        The blade geometry was first modeled in SolidWorks and then imported into ANSYS for meshing and
-                        simulation. The k-epsilon turbulence model was employed to accurately capture the fluid
-                        behavior. Post-processing was done using CFD-Post to visualize velocity vectors, pressure
-                        contours, and streamline plots, which were crucial for the final analysis and design
-                        recommendations.
-                    </p>
+                <div class="row" style="margin-top: 2em;">
+                    <div class="col-7 col-12-mobile" style="text-align: left;">
+                        <h3>Project Overview</h3>
+                        <p>
+                            This project introduces a novel framework that leverages Machine Learning to accelerate the
+                            process of structural topology optimization. The primary goal was to create a generative
+                            model capable of predicting an optimal material layout for a given set of boundary
+                            conditions and loads, drastically reducing the computational time required by traditional
+                            iterative FEA methods.
+                        </p>
+                    </div>
+                    <div class="col-5 col-12-mobile">
+                        <a href="#" class="image fit"><img src="images/overview-image.jpg"
+                                alt="Generative Design Concept"></a>
+                    </div>
                 </div>
 
                 <div class="row" style="margin-top: 2em;">
-                    <div class="col-6 col-12-mobile" style="text-align: left;">
-                        <h4>Key Findings</h4>
-                        <ul>
-                            <li>Achieved a 7% reduction in drag compared to the baseline design.</li>
-                            <li>Identified a critical angle of attack for optimal performance.</li>
-                            <li>Validated simulation results with wind tunnel experimental data.</li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-12-mobile">
+                    <div class="col-5 col-12-mobile">
                         <video autoplay loop muted width="100%">
-                            <source src="videos/heat_conduction_video.mp4" type="video/mp4">
+                            <source src="videos/topology-process.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
+                    <div class="col-7 col-12-mobile" style="text-align: left;">
+                        <h3>Methodology & Tools</h3>
+                        <p>
+                            A large dataset of optimized topologies was generated using ABAQUS and MATLAB. This dataset
+                            was then used to train a Conditional Generative Adversarial Network (cGAN). The trained
+                            model can now produce a highly efficient structural design in seconds, a process that
+                            previously took hours of simulation time. The results were validated by performing FEA on
+                            the generated designs to confirm their structural integrity and performance.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="text-align: left; margin-top: 3em;">
+                    <h4>Key Achievements</h4>
+                    <ul>
+                        <li>Reduced design computation time by over 95%.</li>
+                        <li>The ML model predicts topologies with 98% structural performance accuracy.</li>
+                        <li>Successfully created a framework applicable to various structural problems.</li>
+                    </ul>
                 </div>
 
                 <footer>
-                    <a href="academic_projects.html" class="button scrolly">Back to M.Tech Projects</a>
+                    <a href="academic_projects.html" class="button scrolly">Back to Academic Projects</a>
                 </footer>
 
             </div>
         </section>
     </div>
 
-    <!-- Footer -->
-	<div id="footer">
-
-		<!-- Copyright -->
-		<ul class="copyright">
-			<li>&#9993; affankhanofficial99@gmail.com</li>
-			<li>&phone; 9999813871</li>
-		</ul>
-
-	</div>
+    <div id="footer">
+        <ul class="copyright">
+            <li>&#9993; affankhanofficial99@gmail.com</li>
+            <li>&phone; 9999813871</li>
+        </ul>
+    </div>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
