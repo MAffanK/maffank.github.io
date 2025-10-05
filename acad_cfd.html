@@ -2,21 +2,112 @@
 <html>
 
 <head>
-    <title>CFD Analysis of a Turbine - Affan Khan</title>
+    <title>CFD Programming Project - Affan Khan</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* ---------- Custom Styling (1-column layout matching Prologue) ---------- */
+        .project-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2em;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            padding: 2em;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+            margin-bottom: 3em;
+            transition: transform 0.3s ease, box-shadow 0.4s ease;
+        }
+
+        .project-section:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 25px rgba(213, 26, 26, 0.25);
+        }
+
+        .project-text {
+            flex: 1;
+            min-width: 280px;
+            text-align: left;
+        }
+
+        .project-text h3 {
+
+            font-weight: 700;
+            margin-bottom: 0.6em;
+        }
+
+        .project-text p {
+            color: 0 0 25px rgba(213, 26, 26, 0.25);
+            text-align: justify;
+            font-size: 0.95em;
+            line-height: 1.6em;
+        }
+
+        .project-video {
+            flex: 1;
+            min-width: 320px;
+            text-align: center;
+        }
+
+        .project-video video {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            outline: 1px solid rgba(0, 255, 255, 0.2);
+            transition: outline 0.3s ease;
+        }
+
+        .project-video video:hover {
+            outline: 1px solid rgba(0, 255, 255, 0.05);
+        }
+
+        .section-title {
+
+            font-weight: 800;
+        }
+
+        .button-back {
+            margin-top: 2em;
+            display: inline-block;
+            border: 1px solid #ea2525;
+            color: #f72b2b !important;
+            border-radius: 8px;
+            padding: 0.75em 1.5em;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .button-back:hover {
+            background: #f51616;
+            color: #111 !important;
+        }
+
+        @media screen and (max-width: 800px) {
+            .project-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .project-text {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body class="is-preload">
 
+    <!-- Header -->
     <div id="header">
         <div class="top">
             <div id="logo">
                 <span class="image avatar48"><img src="images/logo2.jpeg" alt="" class="logo-image" /></span>
                 <h1 id="title">Affan Khan</h1>
-                <p>Mechanical Engineer</p>
+                <p>Maker</p>
             </div>
+
             <nav id="nav">
                 <ul>
                     <li><a href="index.html#top"><span class="icon solid fa-home">Intro</span></a></li>
@@ -26,6 +117,7 @@
                 </ul>
             </nav>
         </div>
+
         <div class="bottom">
             <ul class="icons">
                 <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
@@ -34,72 +126,206 @@
         </div>
     </div>
 
+    <!-- Main -->
     <div id="main">
         <section id="project-detail" class="two">
             <div class="container">
-
                 <header>
-                    <h2 class="section-title">CFD Analysis of a Turbine Blade</h2>
-                    <p>An M.Tech project focusing on fluid dynamics and simulation.</p>
+                    <h2 class="section-title">CFD Programming Project</h2>
+                    <p>
+                        Developed during <strong>ME543 – Computational Fluid Dynamics</strong> at IIT Guwahati, this
+                        project demonstrates numerical solvers written from scratch in C and MATLAB for classic CFD
+                        problems.
+                    </p>
                 </header>
 
                 <a href="#" class="image featured"><img src="images/cfd-banner.jpg" alt="CFD Simulation Banner" /></a>
 
-                <div style="text-align: left; margin-top: 2em;">
-                    <h3>Project Overview</h3>
-                    <p>
-                        This project involved a comprehensive Computational Fluid Dynamics (CFD) analysis of a new
-                        turbine blade design aimed at improving aerodynamic efficiency. The primary objective was to
-                        simulate airflow under various operational conditions to identify areas of turbulence and
-                        pressure loss. Using ANSYS Fluent, a 3D model was meshed and subjected to rigorous testing to
-                        validate its performance against theoretical calculations.
-                    </p>
 
-                    <h3>Methodology & Tools</h3>
-                    <p>
-                        The blade geometry was first modeled in SolidWorks and then imported into ANSYS for meshing and
-                        simulation. The k-epsilon turbulence model was employed to accurately capture the fluid
-                        behavior. Post-processing was done using CFD-Post to visualize velocity vectors, pressure
-                        contours, and streamline plots, which were crucial for the final analysis and design
-                        recommendations.
-                    </p>
-                </div>
+                <!-- 1. 2D Transient Heat Conduction -->
+                <div class="project-section">
+                    <div class="project-text">
+                        <h3>2D Transient Heat Conduction (Explicit Time-Marching Simulation)</h3>
 
-                <div class="row" style="margin-top: 2em;">
-                    <div class="col-6 col-12-mobile" style="text-align: left;">
-                        <h4>Key Findings</h4>
-                        <ul>
-                            <li>Achieved a 7% reduction in drag compared to the baseline design.</li>
-                            <li>Identified a critical angle of attack for optimal performance.</li>
-                            <li>Validated simulation results with wind tunnel experimental data.</li>
-                        </ul>
+                        <p>
+                            This simulation solves the unsteady two-dimensional heat diffusion equation
+                            using an <strong>explicit forward-time, central-space (FTCS)</strong> finite difference
+                            scheme.
+                            The solver computes the temperature field at every time step and writes it
+                            to output files, which are later used to generate the full-time-evolution video shown here.
+                        </p>
+
+                        <p style="font-family:'Courier New', monospace; color:#6d6d6d;">
+                            ∂T/∂t = α ( ∂²T/∂x² + ∂²T/∂y² )
+                        </p>
+
+                        <p>
+                            The plate is rectangular (0.3 m × 0.4 m) and initially at 0 K.
+                            Constant boundary temperatures are applied on all sides:
+                            <code>T<sub>L</sub> = T<sub>R</sub> = 300 K</code>,
+                            <code>T<sub>B</sub> = 400 K</code>, and
+                            <code>T<sub>T</sub> = 500 K</code>.
+                            The grid spacing is <code>Δx = Δy = 0.01 m</code> with a time step
+                            of <code>Δt = 0.03 s</code> and thermal diffusivity
+                            <code>α = 1.1234 × 10⁻⁴ m²/s</code>.
+                        </p>
+
+                        <p>
+                            At each iteration, the solver updates interior nodes explicitly using
+                            the diffusion relation and applies fixed-temperature boundary conditions.
+                            All intermediate temperature fields are exported as
+                            <code>output_timestep_XXXX.txt</code> files, enabling a smooth animation
+                            of heat propagation and steady-state approach.
+                        </p>
+
+                        <p>
+                            The resulting video captures the transient rise in temperature
+                            and the eventual formation of a vertical temperature gradient
+                            governed by the imposed boundary conditions.
+                        </p>
                     </div>
-                    <div class="col-6 col-12-mobile">
-                        <video autoplay loop muted width="100%">
+
+                    <div class="project-video">
+                        <video autoplay loop muted controls>
                             <source src="videos/heat_conduction_video.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
+                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
+                            Continuous transient temperature evolution in a 2D plate
+                            (explicit FTCS method, full time-step animation)
+                        </p>
                     </div>
                 </div>
 
-                <footer>
-                    <a href="academic_projects.html" class="button scrolly">Back to M.Tech Projects</a>
-                </footer>
 
+
+
+                <!-- 2. Lid Driven Cavity -->
+                <div class="project-section">
+                    <div class="project-text">
+                        <h3>Lid-Driven Cavity Flow (Vorticity–Stream Function Method)</h3>
+
+                        <p>
+                            This solver computes the 2D incompressible laminar flow inside a square cavity
+                            using the <strong>vorticity–stream function formulation</strong> of the
+                            Navier–Stokes equations. The top lid moves horizontally while all other walls remain
+                            stationary,
+                            producing a primary recirculating vortex and smaller corner eddies.
+                        </p>
+
+                        <p>
+                            The domain was discretized into a uniform <code>32 × 32</code> grid with
+                            <code>Δx = Δy = 1/31</code> and a time step of <code>Δt = 0.001</code>.
+                            Boundary vorticity values were imposed using finite-difference approximations of
+                            the no-slip condition. The stream function Poisson equation
+                            <code>∇²ψ = −ω</code> was iteratively solved in a Gauss–Seidel manner
+                            until convergence below <code>10⁻⁷</code>.
+                        </p>
+
+                        <p>
+                            The flow parameters were:
+                        </p>
+                        <ul style="color:#ccc; margin-left:1em;">
+                            <li>Domain size <code>L = 1</code></li>
+                            <li>Wall velocity <code>U = 4.0</code></li>
+                            <li>Density <code>ρ = 1.0</code></li>
+                            <li>Viscosity <code>μ = 0.01</code></li>
+                            <li><strong>Reynolds number:</strong> <code>Re = 400</code></li>
+                        </ul>
+
+                        <p>
+                            Velocity components were recovered from the stream function as:
+                            <code>u = ∂ψ/∂y</code>, <code>v = −∂ψ/∂x</code>.
+                            Visualization includes velocity contours, vorticity distribution, and streamlines
+                            showing the development of the primary and secondary vortices as steady state is reached.
+                        </p>
+                    </div>
+
+                    <div class="project-video">
+                        <video autoplay loop muted controls>
+                            <source src="videos/lid_driven_cavity_flow.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
+                            Lid-Driven Cavity Simulation at Re = 400 (vorticity–stream function solver)
+                        </p>
+
+                        <img src="images/academic/CFD/streamline.png"
+                            style="margin-top:1.2em; border-radius:10px; width:100%; opacity:0.95;">
+                        <p style="font-size:0.85em; color:#aaa; margin-top:0.4em;">
+                            Streamline plot showing main recirculation vortex.
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- 3. 1D Wave Equation -->
+                <div class="project-section">
+                    <div class="project-text">
+                        <h3>1D Linear Wave Propagation (Advection Equation)</h3>
+                        <p>
+                            This simulation solves the 1D linear advection equation
+                            <em>∂u/∂t + c ∂u/∂x = 0</em>
+                            using multiple explicit finite difference schemes.
+                            The domain length was set to 40 units, discretized with Δx = 1.0 and
+                            Courant number (<em>C₀</em>) = 0.6 for stable time stepping (Δt = 0.6).
+                        </p>
+
+                        <p>
+                            The program was implemented in C with modular routines for
+                            <strong>Upwind (1st order)</strong>, <strong>Lax</strong>,
+                            <strong>MacCormack</strong>, and <strong>Upwind (2nd order)</strong> schemes.
+                            Periodic boundary conditions were applied to simulate continuous wave motion.
+                        </p>
+
+                        <p>
+                            Two different initial conditions were tested:
+                        </p>
+                        <ul style="color:#ccc;">
+                            <li><strong>Step Function:</strong> Represents a sharp discontinuity propagating through the
+                                domain.</li>
+                            <li><strong>Sine Function:</strong> A smooth wave form for analyzing dispersion and phase
+                                accuracy.</li>
+                        </ul>
+
+                        <p>
+                            Results were recorded at fixed time intervals and visualized to compare
+                            amplitude decay and phase shift among different numerical schemes.
+                            The MacCormack scheme produced the most accurate wave profile,
+                            maintaining amplitude with minimal diffusion over 20 seconds.
+                        </p>
+                    </div>
+
+                    <div class="project-video">
+                        <video autoplay loop muted controls>
+                            <source src="videos/step.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p style="font-size:0.85em;color:#aaa;margin-top:0.5em;">Step initial condition (Co = 0.6)</p>
+
+                        <video autoplay loop muted controls style="margin-top:1.5em;">
+                            <source src="videos/sine.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p style="font-size:0.85em;color:#aaa;margin-top:0.5em;">Sine initial condition (Co = 0.6)</p>
+                    </div>
+                </div>
+
+
+                <footer>
+                    <a href="academic_projects.html" class="button scrolly button-back">← Back to M.Tech Projects</a>
+                </footer>
             </div>
         </section>
     </div>
 
     <!-- Footer -->
-	<div id="footer">
-
-		<!-- Copyright -->
-		<ul class="copyright">
-			<li>&#9993; affankhanofficial99@gmail.com</li>
-			<li>&phone; 9999813871</li>
-		</ul>
-
-	</div>
+    <div id="footer">
+        <ul class="copyright">
+            <li>&#9993; affankhanofficial99@gmail.com</li>
+            <li>&phone; 9999813871</li>
+        </ul>
+    </div>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
