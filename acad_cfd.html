@@ -24,7 +24,7 @@
 
         .project-section:hover {
             transform: translateY(-6px);
-            box-shadow: 0 0 25px rgba(213, 26, 26, 0.25);
+            box-shadow: 0 0 25px rgba(254, 162, 24, 0.25);
         }
 
         .project-text {
@@ -72,15 +72,15 @@
         .button-back {
             margin-top: 2em;
             display: inline-block;
-            border: 1px solid #ea2525;
-            color: #f72b2b !important;
+            border: 1px solid #6facf2;
+            color: #ffffff !important;
             border-radius: 8px;
             padding: 0.75em 1.5em;
             transition: background 0.3s ease, color 0.3s ease;
         }
 
         .button-back:hover {
-            background: #f51616;
+            background: #fb8a27;
             color: #111 !important;
         }
 
@@ -96,6 +96,12 @@
         }
     </style>
 </head>
+
+<!-- MathJax for rendering equations -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
 
 <body class="is-preload">
 
@@ -113,7 +119,9 @@
                     <li><a href="index.html#top"><span class="icon solid fa-home">Intro</span></a></li>
                     <li><a href="index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
                     <li><a href="index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
+                    <li><a href="index.html#accolades"><span class="icon solid fa-trophy">Accolades</span></a></li>
                     <li><a href="index.html#contact"><span class="icon solid fa-envelope">Contact</span></a></li>
+
                 </ul>
             </nav>
         </div>
@@ -139,49 +147,38 @@
                     </p>
                 </header>
 
-                <a href="#" class="image featured"><img src="images/cfd-banner.jpg" alt="CFD Simulation Banner" /></a>
+                <a href="#" class="image featured">
+                    <img src="images/academic/CFD/fdm.png" alt="CFD Simulation Banner"
+                        style="width:90%; margin:auto; display:block; border-radius:10px;" />
+                </a>
+
 
 
                 <!-- 1. 2D Transient Heat Conduction -->
                 <div class="project-section">
                     <div class="project-text">
-                        <h3>2D Transient Heat Conduction (Explicit Time-Marching Simulation)</h3>
+                        <h3>2D Transient Heat Conduction</h3>
 
                         <p>
-                            This simulation solves the unsteady two-dimensional heat diffusion equation
-                            using an <strong>explicit forward-time, central-space (FTCS)</strong> finite difference
-                            scheme.
-                            The solver computes the temperature field at every time step and writes it
-                            to output files, which are later used to generate the full-time-evolution video shown here.
+                            A simulation of how heat spreads through a rectangular metal plate over time,
+                            developed using an <strong>explicit finite-difference method</strong>.
+                            The solver calculates the temperature at every grid point and time step,
+                            creating a smooth animation of the entire transient process.
                         </p>
 
-                        <p style="font-family:'Courier New', monospace; color:#6d6d6d;">
-                            ∂T/∂t = α ( ∂²T/∂x² + ∂²T/∂y² )
-                        </p>
-
-                        <p>
-                            The plate is rectangular (0.3 m × 0.4 m) and initially at 0 K.
-                            Constant boundary temperatures are applied on all sides:
-                            <code>T<sub>L</sub> = T<sub>R</sub> = 300 K</code>,
-                            <code>T<sub>B</sub> = 400 K</code>, and
-                            <code>T<sub>T</sub> = 500 K</code>.
-                            The grid spacing is <code>Δx = Δy = 0.01 m</code> with a time step
-                            of <code>Δt = 0.03 s</code> and thermal diffusivity
-                            <code>α = 1.1234 × 10⁻⁴ m²/s</code>.
+                        <p style="text-align:center;">
+                            \[
+                            \frac{\partial T}{\partial t} =
+                            \alpha \left( \frac{\partial^2 T}{\partial x^2} +
+                            \frac{\partial^2 T}{\partial y^2} \right)
+                            \]
                         </p>
 
                         <p>
-                            At each iteration, the solver updates interior nodes explicitly using
-                            the diffusion relation and applies fixed-temperature boundary conditions.
-                            All intermediate temperature fields are exported as
-                            <code>output_timestep_XXXX.txt</code> files, enabling a smooth animation
-                            of heat propagation and steady-state approach.
-                        </p>
-
-                        <p>
-                            The resulting video captures the transient rise in temperature
-                            and the eventual formation of a vertical temperature gradient
-                            governed by the imposed boundary conditions.
+                            The plate starts cold and gradually reaches steady state
+                            as heat enters from the top and bottom surfaces at fixed temperatures.
+                            This project visualizes the physical beauty of thermal diffusion and
+                            how conduction stabilizes over time.
                         </p>
                     </div>
 
@@ -191,8 +188,7 @@
                             Your browser does not support the video tag.
                         </video>
                         <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
-                            Continuous transient temperature evolution in a 2D plate
-                            (explicit FTCS method, full time-step animation)
+                            Transient temperature evolution in a rectangular plate
                         </p>
                     </div>
                 </div>
@@ -200,44 +196,33 @@
 
 
 
+
+
                 <!-- 2. Lid Driven Cavity -->
                 <div class="project-section">
                     <div class="project-text">
-                        <h3>Lid-Driven Cavity Flow (Vorticity–Stream Function Method)</h3>
+                        <h3>Lid-Driven Cavity Flow</h3>
 
                         <p>
-                            This solver computes the 2D incompressible laminar flow inside a square cavity
-                            using the <strong>vorticity–stream function formulation</strong> of the
-                            Navier–Stokes equations. The top lid moves horizontally while all other walls remain
-                            stationary,
-                            producing a primary recirculating vortex and smaller corner eddies.
+                            A classic Computational Fluid Dynamics (CFD) problem that models the motion of fluid trapped
+                            inside a square cavity.
+                            The top lid slides horizontally while the remaining walls are stationary, creating a
+                            circulating vortex inside the domain.
+                        </p>
+
+                        <p style="text-align:center;">
+                            \[
+                            \nabla^2 \psi = -\omega
+                            \quad \text{and} \quad
+                            \frac{D\omega}{Dt} = \nu \nabla^2 \omega
+                            \]
                         </p>
 
                         <p>
-                            The domain was discretized into a uniform <code>32 × 32</code> grid with
-                            <code>Δx = Δy = 1/31</code> and a time step of <code>Δt = 0.001</code>.
-                            Boundary vorticity values were imposed using finite-difference approximations of
-                            the no-slip condition. The stream function Poisson equation
-                            <code>∇²ψ = −ω</code> was iteratively solved in a Gauss–Seidel manner
-                            until convergence below <code>10⁻⁷</code>.
-                        </p>
-
-                        <p>
-                            The flow parameters were:
-                        </p>
-                        <ul style="color:#ccc; margin-left:1em;">
-                            <li>Domain size <code>L = 1</code></li>
-                            <li>Wall velocity <code>U = 4.0</code></li>
-                            <li>Density <code>ρ = 1.0</code></li>
-                            <li>Viscosity <code>μ = 0.01</code></li>
-                            <li><strong>Reynolds number:</strong> <code>Re = 400</code></li>
-                        </ul>
-
-                        <p>
-                            Velocity components were recovered from the stream function as:
-                            <code>u = ∂ψ/∂y</code>, <code>v = −∂ψ/∂x</code>.
-                            Visualization includes velocity contours, vorticity distribution, and streamlines
-                            showing the development of the primary and secondary vortices as steady state is reached.
+                            Implemented using the <strong>vorticity–stream function formulation</strong>,
+                            this solver captures the formation of the main vortex and smaller corner eddies
+                            as the flow develops toward steady state.
+                            The results are visualized through animated vorticity contours and streamlines.
                         </p>
                     </div>
 
@@ -247,52 +232,44 @@
                             Your browser does not support the video tag.
                         </video>
                         <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
-                            Lid-Driven Cavity Simulation at Re = 400 (vorticity–stream function solver)
+                            Flow evolution inside a square cavity (Re = 400)
                         </p>
 
-                        <img src="images/academic/CFD/streamline.png"
+                        <img src="images/academic/CFD/streamline.png" alt="Streamlines for Lid-Driven Cavity"
                             style="margin-top:1.2em; border-radius:10px; width:100%; opacity:0.95;">
                         <p style="font-size:0.85em; color:#aaa; margin-top:0.4em;">
-                            Streamline plot showing main recirculation vortex.
+                            Streamline plot showing primary and secondary vortices.
                         </p>
                     </div>
                 </div>
 
 
-                <!-- 3. 1D Wave Equation -->
+
+
+                <!-- 3. 1D Wave / Advection Equation -->
                 <div class="project-section">
                     <div class="project-text">
-                        <h3>1D Linear Wave Propagation (Advection Equation)</h3>
+                        <h3>1D Wave Propagation</h3>
+
                         <p>
-                            This simulation solves the 1D linear advection equation
-                            <em>∂u/∂t + c ∂u/∂x = 0</em>
-                            using multiple explicit finite difference schemes.
-                            The domain length was set to 40 units, discretized with Δx = 1.0 and
-                            Courant number (<em>C₀</em>) = 0.6 for stable time stepping (Δt = 0.6).
+                            A one-dimensional wave simulation demonstrating how signals travel and
+                            decay over time in a medium. The governing equation represents
+                            simple wave motion, solved using multiple numerical schemes including
+                            <strong>Upwind</strong>, <strong>Lax</strong>, and <strong>MacCormack</strong>.
+                        </p>
+
+                        <p style="text-align:center;">
+                            \[
+                            \frac{\partial u}{\partial t} +
+                            c\,\frac{\partial u}{\partial x} = 0
+                            \]
                         </p>
 
                         <p>
-                            The program was implemented in C with modular routines for
-                            <strong>Upwind (1st order)</strong>, <strong>Lax</strong>,
-                            <strong>MacCormack</strong>, and <strong>Upwind (2nd order)</strong> schemes.
-                            Periodic boundary conditions were applied to simulate continuous wave motion.
-                        </p>
-
-                        <p>
-                            Two different initial conditions were tested:
-                        </p>
-                        <ul style="color:#ccc;">
-                            <li><strong>Step Function:</strong> Represents a sharp discontinuity propagating through the
-                                domain.</li>
-                            <li><strong>Sine Function:</strong> A smooth wave form for analyzing dispersion and phase
-                                accuracy.</li>
-                        </ul>
-
-                        <p>
-                            Results were recorded at fixed time intervals and visualized to compare
-                            amplitude decay and phase shift among different numerical schemes.
-                            The MacCormack scheme produced the most accurate wave profile,
-                            maintaining amplitude with minimal diffusion over 20 seconds.
+                            Two types of waves were tested — a sharp step pulse and a smooth sine wave —
+                            to compare stability and diffusion across schemes.
+                            The animation below shows how each method captures wave motion and amplitude
+                            decay under identical conditions.
                         </p>
                     </div>
 
@@ -301,15 +278,21 @@
                             <source src="videos/step.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p style="font-size:0.85em;color:#aaa;margin-top:0.5em;">Step initial condition (Co = 0.6)</p>
+                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
+                            Step-wave propagation (\(C_0 = 0.6\))
+                        </p>
 
                         <video autoplay loop muted controls style="margin-top:1.5em;">
                             <source src="videos/sine.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p style="font-size:0.85em;color:#aaa;margin-top:0.5em;">Sine initial condition (Co = 0.6)</p>
+                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
+                            Sine-wave propagation (\(C_0 = 0.6\))
+                        </p>
                     </div>
                 </div>
+
+
 
 
                 <footer>
