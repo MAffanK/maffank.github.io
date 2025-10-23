@@ -2,30 +2,144 @@
 <html>
 
 <head>
-    <title>CFD Analysis of a Turbine - Affan Khan</title>
+    <title>SAE ISS Aero Design Challenge - Affan Khan</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* ---------- Reused styling tuned for SAE page (same visual language as CFD page) ---------- */
+        .project-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2em;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            padding: 2em;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+            margin-bottom: 3em;
+            transition: transform 0.3s ease, box-shadow 0.4s ease;
+        }
+
+        .project-section:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 25px rgba(254, 162, 24, 0.25);
+        }
+
+        .project-text {
+            flex: 1;
+            min-width: 280px;
+            text-align: left;
+        }
+
+        .project-text h3 {
+            font-weight: 700;
+            margin-bottom: 0.6em;
+        }
+
+        .project-text p {
+            color: #cfcfcf;
+            text-align: justify;
+            font-size: 0.95em;
+            line-height: 1.6em;
+        }
+
+        .project-media {
+            flex: 1;
+            min-width: 320px;
+            text-align: center;
+        }
+
+        .project-media img,
+        .project-media video {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            transition: outline 0.3s ease;
+        }
+
+        .section-title {
+            font-weight: 800;
+        }
+
+        .button-back {
+            margin-top: 2em;
+            display: inline-block;
+            border: 2px solid #84bdf0;
+            color: #ffffff !important;
+            border-radius: 8px;
+            padding: 0.75em 1.5em;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .button-back:hover {
+            background: #ffffff;
+            color: #84bdf0 !important;
+            border-color: #84bdf0;
+        }
+
+        .spec-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 0.6em;
+            margin-top: 0.6em;
+        }
+
+        .spec-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 0.8em;
+            text-align: center;
+            font-size: 0.95em;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 0.8em;
+            margin-top: 1em;
+        }
+
+        @media screen and (max-width: 800px) {
+            .project-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .project-text {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
+
+<!-- MathJax for any equations -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <body class="is-preload">
 
+    <!-- Header -->
     <div id="header">
         <div class="top">
             <div id="logo">
                 <span class="image avatar48"><img src="images/logo2.jpeg" alt="" class="logo-image" /></span>
                 <h1 id="title">Affan Khan</h1>
-                <p>Mechanical Engineer</p>
+                <p>Maker</p>
             </div>
+
             <nav id="nav">
                 <ul>
                     <li><a href="index.html#top"><span class="icon solid fa-home">Intro</span></a></li>
                     <li><a href="index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
                     <li><a href="index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
+                    <li><a href="index.html#accolades"><span class="icon solid fa-trophy">Accolades</span></a></li>
                     <li><a href="index.html#contact"><span class="icon solid fa-envelope">Contact</span></a></li>
                 </ul>
             </nav>
         </div>
+
         <div class="bottom">
             <ul class="icons">
                 <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
@@ -34,72 +148,191 @@
         </div>
     </div>
 
+    <!-- Main -->
     <div id="main">
         <section id="project-detail" class="two">
             <div class="container">
-
                 <header>
-                    <h2 class="section-title">Aerodesign challenge</h2>
-                    <p>An M.Tech project focusing on fluid dynamics and simulation.</p>
+                    <h2 class="section-title">SAE ISS Aero Design Challenge</h2>
+                    <p>
+                        A student-built airplane project developed for the SAE ISS Aero Design Challenge. The plane was
+                        designed for a 2 m wingspan category with a 5 kg payload target, later extended in my BTech
+                        work to include solar power instrumentation for greatly increased endurance.
+                    </p>
                 </header>
 
-                <a href="#" class="image featured"><img src="images/cfd-banner.jpg" alt="CFD Simulation Banner" /></a>
+                <a href="#" class="image featured">
+                    <img src="images/academic/SAE/banner_plane.png" alt="SAE Plane Banner"
+                        style="width:90%; margin:auto; display:block; border-radius:10px;" />
+                </a>
 
-                <div style="text-align: left; margin-top: 2em;">
-                    <h3>Project Overview</h3>
-                    <p>
-                        This project involved a comprehensive Computational Fluid Dynamics (CFD) analysis of a new
-                        turbine blade design aimed at improving aerodynamic efficiency. The primary objective was to
-                        simulate airflow under various operational conditions to identify areas of turbulence and
-                        pressure loss. Using ANSYS Fluent, a 3D model was meshed and subjected to rigorous testing to
-                        validate its performance against theoretical calculations.
-                    </p>
+                <!-- Project overview -->
+                <div class="project-section">
+                    <div class="project-text">
+                        <h3>Project Summary</h3>
+                        <p>
+                            The team designed, manufactured and flight-tested a 2 m wingspan UAV capable of carrying a
+                            5 kg payload. Primary competition goals were structural efficiency, low drag, and robust
+                            flight performance. In a BTech continuation I proposed integrating solar panels on the
+                            upper wing to extend mission endurance — theoretical calculations indicated a
+                            sunrise-to-sunset
+                            range on the order of <strong>≈ 550 km</strong> under ideal conditions.
+                        </p>
 
-                    <h3>Methodology & Tools</h3>
-                    <p>
-                        The blade geometry was first modeled in SolidWorks and then imported into ANSYS for meshing and
-                        simulation. The k-epsilon turbulence model was employed to accurately capture the fluid
-                        behavior. Post-processing was done using CFD-Post to visualize velocity vectors, pressure
-                        contours, and streamline plots, which were crucial for the final analysis and design
-                        recommendations.
-                    </p>
-                </div>
-
-                <div class="row" style="margin-top: 2em;">
-                    <div class="col-6 col-12-mobile" style="text-align: left;">
-                        <h4>Key Findings</h4>
-                        <ul>
-                            <li>Achieved a 7% reduction in drag compared to the baseline design.</li>
-                            <li>Identified a critical angle of attack for optimal performance.</li>
-                            <li>Validated simulation results with wind tunnel experimental data.</li>
-                        </ul>
+                        <p style="text-align:center; margin-top:0.6em;">
+                            Solar power balance (simplified): <br />
+                            \[
+                            P_{\text{solar}} \cdot \eta_{\text{sys}} \approx P_{\text{req}}
+                            \]
+                        </p>
                     </div>
-                    <div class="col-6 col-12-mobile">
-                        <video autoplay loop muted width="100%">
-                            <source src="videos/heat_conduction_video.mp4" type="video/mp4">
+
+                    <div class="project-media">
+                        <video autoplay loop muted controls>
+                            <source src="videos/sae_flight.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
+                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
+                            Flight test — short hop and cruise.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Role & responsibilities -->
+                <div class="project-section">
+                    <div class="project-text">
+                        <h3>My Role</h3>
+                        <p>
+                            I was responsible for the fuselage design and the CFD analysis of the wing and full
+                            aircraft.
+                            I created the complete CAD model in SolidWorks, performed aerodynamic studies (drag/polar
+                            curves),
+                            and validated designs through ANSYS (including composite checks with ANSYS ACP). For the
+                            BTech
+                            continuation I designed the solar power system and carried out energy & range calculations.
+                        </p>
+                    </div>
+
+                    <div class="project-media">
+                        <img src="images/academic/SAE/cad_snapshot.png" alt="CAD model snapshot" />
+                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
+                            CAD model overview (SolidWorks).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Specifications -->
+                <div class="project-section">
+                    <div class="project-text">
+                        <h3>Key Specifications & Performance</h3>
+
+                        <div class="spec-list">
+                            <div class="spec-card">
+                                <strong>Wingspan</strong><br />2.0 m
+                            </div>
+                            <div class="spec-card">
+                                <strong>Payload Capacity</strong><br />5 kg
+                            </div>
+                            <div class="spec-card">
+                                <strong>Primary Materials</strong><br />Balsa ribs · Aluminium spars · Carbon-fiber
+                                fuselage
+                            </div>
+                            <div class="spec-card">
+                                <strong>Max Speed</strong><br />20 m/s
+                            </div>
+                            <div class="spec-card">
+                                <strong>Cruise Speed</strong><br />10 m/s
+                            </div>
+                            <div class="spec-card">
+                                <strong>Takeoff Distance</strong><br />≈ 16 m
+                            </div>
+                            <div class="spec-card">
+                                <strong>Theoretical Range (solar-assisted)</strong><br />≈ 550 km (sunrise→sunset
+                                estimate)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-media">
+                        <img src="images/academic/SAE/prototype_photo.png" alt="Prototype photo" />
+                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
+                            Built prototype (pre-flight).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tools & analysis -->
+                <div class="project-section">
+                    <div class="project-text">
+                        <h3>Tools & Analysis</h3>
+                        <p>
+                            The project combined CAD, CFD, composite analysis and data-driven performance estimation:
+                        </p>
+
+                        <ul>
+                            <li><strong>SolidWorks</strong> — full aircraft CAD and manufacturing drawings.</li>
+                            <li><strong>ANSYS (CFX/Fluent & ACP)</strong> — aerodynamic CFD runs, flow visualization and
+                                composite layup simulation.</li>
+                            <li><strong>MATLAB</strong> — plotting, drag vs velocity curves, propeller thrust vs
+                                velocity, solar energy calculations and range predictions.</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-media">
+                        <img src="images/academic/SAE/ansys_streamline.png" alt="ANSYS flow results" />
+                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
+                            Sample CFD result: streamline & vorticity visualization.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Media gallery -->
+                <div class="project-section" style="flex-direction:column;">
+                    <div class="project-text">
+                        <h3>Media & Manufacturing</h3>
+                        <p>
+                            Below are photos and graphs from the project — CAD renders, manufacturing steps (rib cutting
+                            and spar assembly),
+                            aerodynamic graphs and the team photo.
+                        </p>
+
+                        <div class="media-grid">
+                            <div><img src="images/academic/SAE/manufacturing_1.png" alt="Manufacturing photo 1" /></div>
+                            <div><img src="images/academic/SAE/manufacturing_2.png" alt="Manufacturing photo 2" /></div>
+                            <div><img src="images/academic/SAE/graph_drag_vs_v.png" alt="Drag vs velocity graph" />
+                            </div>
+                            <div><img src="images/academic/SAE/graph_prop_vs_v.png"
+                                    alt="Propeller thrust vs velocity" /></div>
+                            <div><img src="images/academic/SAE/team_photo.jpg" alt="Team photo" /></div>
+                            <div><img src="images/academic/SAE/solar_layout.png" alt="Solar layout drawing" /></div>
+                        </div>
+                    </div>
+
+                    <div class="project-media" style="width:100%; margin-top:1em;">
+                        <video controls>
+                            <source src="videos/sae_manufacturing.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
+                            Manufacturing process and ground testing video.
+                        </p>
                     </div>
                 </div>
 
                 <footer>
-                    <a href="academic_projects.html" class="button scrolly">Back to M.Tech Projects</a>
+                    <a href="academic_projects.html" class="button scrolly button-back">← Back to M.Tech Projects</a>
                 </footer>
-
             </div>
         </section>
     </div>
 
     <!-- Footer -->
-	<div id="footer">
-
-		<!-- Copyright -->
-		<ul class="copyright">
-			<li>&#9993; affankhanofficial99@gmail.com</li>
-			<li>&phone; 9999813871</li>
-		</ul>
-
-	</div>
+    <div id="footer">
+        <ul class="copyright">
+            <li>&#9993; affankhanofficial99@gmail.com</li>
+            <li>&phone; 9999813871</li>
+        </ul>
+    </div>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
