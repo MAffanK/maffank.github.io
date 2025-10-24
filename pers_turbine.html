@@ -2,30 +2,116 @@
 <html>
 
 <head>
-    <title>CFD Analysis of a Turbine - Affan Khan</title>
+    <title>CFD–ML Turbine Optimization - Affan Khan</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* ---------- Custom Styling (matching CFD Programming Project) ---------- */
+        .project-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2em;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            padding: 2em;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+            margin-bottom: 3em;
+            transition: transform 0.3s ease, box-shadow 0.4s ease;
+        }
+
+        .project-section:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 25px rgba(254, 162, 24, 0.25);
+        }
+
+        .project-text {
+            flex: 1;
+            min-width: 280px;
+            text-align: left;
+        }
+
+        .project-text h3 {
+            font-weight: 700;
+            margin-bottom: 0.6em;
+        }
+
+        .project-text p {
+            text-align: justify;
+            font-size: 0.95em;
+            line-height: 1.6em;
+        }
+
+        .project-video {
+            flex: 1;
+            min-width: 320px;
+            text-align: center;
+        }
+
+        .project-video video {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            transition: outline 0.3s ease;
+        }
+
+        .section-title {
+            font-weight: 800;
+        }
+
+        .button-back {
+            margin-top: 2em;
+            display: inline-block;
+            border: 2px solid #84bdf0;
+            color: #ffffff !important;
+            border-radius: 8px;
+            padding: 0.75em 1.5em;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .button-back:hover {
+            background: #ffffff;
+            color: #84bdf0 !important;
+            border-color: #84bdf0;
+        }
+
+        @media screen and (max-width: 800px) {
+            .project-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .project-text {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body class="is-preload">
 
+    <!-- Header -->
     <div id="header">
         <div class="top">
             <div id="logo">
                 <span class="image avatar48"><img src="images/logo2.jpeg" alt="" class="logo-image" /></span>
                 <h1 id="title">Affan Khan</h1>
-                <p>Mechanical Engineer</p>
+                <p>Maker</p>
             </div>
+
             <nav id="nav">
                 <ul>
                     <li><a href="index.html#top"><span class="icon solid fa-home">Intro</span></a></li>
                     <li><a href="index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
                     <li><a href="index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
+                    <li><a href="index.html#accolades"><span class="icon solid fa-trophy">Accolades</span></a></li>
                     <li><a href="index.html#contact"><span class="icon solid fa-envelope">Contact</span></a></li>
                 </ul>
             </nav>
         </div>
+
         <div class="bottom">
             <ul class="icons">
                 <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
@@ -34,71 +120,117 @@
         </div>
     </div>
 
+    <!-- Main -->
     <div id="main">
         <section id="project-detail" class="two">
             <div class="container">
-
                 <header>
-                    <h2 class="section-title">CFD Analysis of a Turbine Blade</h2>
-                    <p>An M.Tech project focusing on fluid dynamics and simulation.</p>
+                    <h2 class="section-title">CFD–Machine Learning Pipeline for Turbine Optimization</h2>
+                    <p>
+                        A hybrid approach combining <strong>Computational Fluid Dynamics (CFD)</strong> and
+                        <strong>Machine Learning</strong> for optimizing hydraulic turbine blade geometry.
+                        Developed as an independent project to accelerate turbine design through
+                        data-driven surrogate modeling.
+                    </p>
                 </header>
 
-                <a href="#" class="image featured"><img src="images/cfd-banner.jpg" alt="CFD Simulation Banner" /></a>
+                <!-- Banner -->
+                <a href="#" class="image featured">
+                    <img src="images/academic/CFD/turbine_banner.png" alt="Turbine CFD Banner"
+                        style="width:90%; margin:auto; display:block; border-radius:10px;" />
+                </a>
 
-                <div style="text-align: left; margin-top: 2em;">
-                    <h3>Project Overview</h3>
-                    <p>
-                        This project involved a comprehensive Computational Fluid Dynamics (CFD) analysis of a new
-                        turbine blade design aimed at improving aerodynamic efficiency. The primary objective was to
-                        simulate airflow under various operational conditions to identify areas of turbulence and
-                        pressure loss. Using ANSYS Fluent, a 3D model was meshed and subjected to rigorous testing to
-                        validate its performance against theoretical calculations.
-                    </p>
+                <!-- 1. CFD Simulation -->
+                <div class="project-section">
+                    <div class="project-text">
+                        <h3>Dynamic Meshing CFD Simulation</h3>
 
-                    <h3>Methodology & Tools</h3>
-                    <p>
-                        The blade geometry was first modeled in SolidWorks and then imported into ANSYS for meshing and
-                        simulation. The k-epsilon turbulence model was employed to accurately capture the fluid
-                        behavior. Post-processing was done using CFD-Post to visualize velocity vectors, pressure
-                        contours, and streamline plots, which were crucial for the final analysis and design
-                        recommendations.
-                    </p>
-                </div>
+                        <p>
+                            The project began with detailed <strong>ANSYS Fluent simulations</strong> using
+                            <strong>Dynamic Meshing</strong> to analyze the transient fluid–structure interaction
+                            around turbine blades. Each simulation captured pressure, velocity, and torque over time
+                            for different blade geometries and flow rates.
+                        </p>
 
-                <div class="row" style="margin-top: 2em;">
-                    <div class="col-6 col-12-mobile" style="text-align: left;">
-                        <h4>Key Findings</h4>
-                        <ul>
-                            <li>Achieved a 7% reduction in drag compared to the baseline design.</li>
-                            <li>Identified a critical angle of attack for optimal performance.</li>
-                            <li>Validated simulation results with wind tunnel experimental data.</li>
-                        </ul>
+                        <p>
+                            The obtained torque and power outputs were
+                            <strong>validated using velocity triangle theory</strong>, ensuring that CFD results
+                            aligned with analytical expectations and experimental trends.
+                        </p>
+
+                        <p>
+                            This CFD dataset formed the foundation for training a surrogate model that could predict
+                            efficiency rapidly without repeated full simulations.
+                        </p>
                     </div>
-                    <div class="col-6 col-12-mobile">
-                        <video autoplay loop muted width="100%">
-                            <source src="videos/heat_conduction_video.mp4" type="video/mp4">
+
+                    <div class="project-video">
+                        <video autoplay loop muted controls>
+                            <source src="videos/turbine_velocity.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
+                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
+                            Velocity contour animation from dynamic mesh simulation
+                        </p>
                     </div>
+                </div>
+
+                <!-- 2. Machine Learning Model -->
+                <div class="project-section">
+                    <div class="project-text">
+                        <h3>Machine Learning–Based Surrogate Modeling</h3>
+
+                        <p>
+                            Using data from <strong>50+ simulation runs</strong>, features such as blade angle,
+                            curvature ratio, and flow coefficient were extracted. A regression model trained on this
+                            data could predict turbine efficiency with an accuracy exceeding
+                            <strong>95%</strong>.
+                        </p>
+
+                        <p>
+                            The trained model replaced CFD in subsequent optimization runs, enabling rapid exploration
+                            of new blade designs using the surrogate’s predictions.
+                        </p>
+
+                        <p>
+                            The resulting pipeline achieved a <strong>10× reduction in computational cost</strong>,
+                            while maintaining near-CFD accuracy — a step toward intelligent, data-driven turbine design.
+                        </p>
+                    </div>
+
+                    <div class="project-video">
+                        <img src="images/academic/CFD/ml_efficiency_plot.png" alt="Predicted vs Actual Efficiency Plot"
+                            style="border-radius:10px; width:100%; opacity:0.95;">
+                        <p style="font-size:0.85em; color:#aaa; margin-top:0.4em;">
+                            Comparison between CFD-computed and ML-predicted efficiencies
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tools & Summary -->
+                <div class="project-section" style="flex-direction: column; text-align: center;">
+                    <h3>Key Tools & Techniques</h3>
+                    <p>
+                        <strong>ANSYS Fluent</strong> (Dynamic Mesh, UDFs) •
+                        <strong>Python</strong> (scikit-learn, NumPy, Pandas) •
+                        <strong>Data-driven Surrogate Optimization</strong> •
+                        CFD Post-Processing & Validation via Velocity Triangle Theory
+                    </p>
                 </div>
 
                 <footer>
-                    <a href="academic_projects.html" class="button scrolly">Back to M.Tech Projects</a>
+                    <a href="academic_projects.html" class="button scrolly button-back">← Back to M.Tech Projects</a>
                 </footer>
-
             </div>
         </section>
     </div>
 
     <!-- Footer -->
     <div id="footer">
-
-        <!-- Copyright -->
         <ul class="copyright">
             <li>&#9993; affankhanofficial99@gmail.com</li>
             <li>&phone; 9999813871</li>
         </ul>
-
     </div>
 
     <script src="assets/js/jquery.min.js"></script>
