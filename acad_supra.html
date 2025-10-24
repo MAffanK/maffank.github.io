@@ -2,30 +2,116 @@
 <html>
 
 <head>
-    <title>CFD Analysis of a Turbine - Affan Khan</title>
+    <title>Supra SAE India - Affan Khan</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        .project-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2em;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            padding: 2em;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+            margin-bottom: 3em;
+            transition: transform 0.3s ease, box-shadow 0.4s ease;
+        }
+
+        .project-section:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 25px rgba(254, 162, 24, 0.25);
+        }
+
+        .project-text {
+            flex: 1;
+            min-width: 280px;
+            text-align: left;
+        }
+
+        .project-text h3 {
+            font-weight: 700;
+            margin-bottom: 0.6em;
+        }
+
+        .project-text p {
+            text-align: justify;
+            font-size: 0.95em;
+            line-height: 1.6em;
+        }
+
+        .project-media {
+            flex: 1;
+            min-width: 320px;
+            text-align: center;
+        }
+
+        .project-media img,
+        .project-media video {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 1em;
+        }
+
+        .section-title {
+            font-weight: 800;
+        }
+
+        .button-back {
+            margin-top: 2em;
+            display: inline-block;
+            border: 2px solid #84bdf0;
+            color: #ffffff !important;
+            border-radius: 8px;
+            padding: 0.75em 1.5em;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .button-back:hover {
+            background: #ffffff;
+            color: #84bdf0 !important;
+            border-color: #84bdf0;
+        }
+
+        @media screen and (max-width: 800px) {
+            .project-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .project-text {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body class="is-preload">
 
+    <!-- Header -->
     <div id="header">
         <div class="top">
             <div id="logo">
                 <span class="image avatar48"><img src="images/logo2.jpeg" alt="" class="logo-image" /></span>
                 <h1 id="title">Affan Khan</h1>
-                <p>Mechanical Engineer</p>
+                <p>Maker</p>
             </div>
+
             <nav id="nav">
                 <ul>
                     <li><a href="index.html#top"><span class="icon solid fa-home">Intro</span></a></li>
                     <li><a href="index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
                     <li><a href="index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
+                    <li><a href="index.html#accolades"><span class="icon solid fa-trophy">Accolades</span></a></li>
                     <li><a href="index.html#contact"><span class="icon solid fa-envelope">Contact</span></a></li>
                 </ul>
             </nav>
         </div>
+
         <div class="bottom">
             <ul class="icons">
                 <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
@@ -34,72 +120,112 @@
         </div>
     </div>
 
+    <!-- Main -->
     <div id="main">
         <section id="project-detail" class="two">
             <div class="container">
-
                 <header>
-                    <h2 class="section-title">Supra</h2>
-                    <p>An M.Tech project focusing on fluid dynamics and simulation.</p>
+                    <h2 class="section-title">Supra SAE India</h2>
+                    <p>
+                        B.Tech Major Project | Aug 2018 – Jul 2019
+                    </p>
                 </header>
 
-                <a href="#" class="image featured"><img src="images/cfd-banner.jpg" alt="CFD Simulation Banner" /></a>
+                <a href="#" class="image featured">
+                    <img src="images/academic/supra/banner.jpg" alt="Supra SAE India Vehicle Banner"
+                        style="width:90%; margin:auto; display:block; border-radius:10px;" />
+                </a>
 
-                <div style="text-align: left; margin-top: 2em;">
-                    <h3>Project Overview</h3>
-                    <p>
-                        This project involved a comprehensive Computational Fluid Dynamics (CFD) analysis of a new
-                        turbine blade design aimed at improving aerodynamic efficiency. The primary objective was to
-                        simulate airflow under various operational conditions to identify areas of turbulence and
-                        pressure loss. Using ANSYS Fluent, a 3D model was meshed and subjected to rigorous testing to
-                        validate its performance against theoretical calculations.
-                    </p>
+                <!-- 1. Design and Manufacturing -->
+                <div class="project-section">
+                    <div class="project-text">
+                        <h3>Design & Manufacturing of Powertrain Components</h3>
 
-                    <h3>Methodology & Tools</h3>
-                    <p>
-                        The blade geometry was first modeled in SolidWorks and then imported into ANSYS for meshing and
-                        simulation. The k-epsilon turbulence model was employed to accurately capture the fluid
-                        behavior. Post-processing was done using CFD-Post to visualize velocity vectors, pressure
-                        contours, and streamline plots, which were crucial for the final analysis and design
-                        recommendations.
-                    </p>
+                        <p>
+                            As part of the <strong>Supra SAE India 2019</strong> competition, our team designed and
+                            built
+                            a formula-style race car adhering to SAE standards. My focus was on the <strong>powertrain
+                                system</strong> — specifically designing, analyzing, and fabricating components such as
+                            <strong>engine mounts</strong> and <strong>transmission sprockets</strong>.
+                        </p>
+
+                        <p>
+                            I also developed detailed <strong>CAD models for over 40 components</strong> across
+                            subsystems, integrating them into the full vehicle assembly using SolidWorks. These designs
+                            emphasized weight reduction, manufacturability, and vibration stability.
+                        </p>
+                    </div>
+
+                    <div class="project-media">
+                        <img src="images/academic/supra/engine_mount.jpg" alt="Engine Mount CAD Model" />
+                        <img src="images/academic/supra/transmission_sprocket.jpg" alt="Transmission Sprocket CAD" />
+                    </div>
                 </div>
 
-                <div class="row" style="margin-top: 2em;">
-                    <div class="col-6 col-12-mobile" style="text-align: left;">
-                        <h4>Key Findings</h4>
-                        <ul>
-                            <li>Achieved a 7% reduction in drag compared to the baseline design.</li>
-                            <li>Identified a critical angle of attack for optimal performance.</li>
-                            <li>Validated simulation results with wind tunnel experimental data.</li>
-                        </ul>
+                <!-- 2. Vehicle Integration & Analysis -->
+                <div class="project-section">
+                    <div class="project-text">
+                        <h3>Vehicle Integration & Structural Analysis</h3>
+
+                        <p>
+                            The powertrain components were integrated into the <strong>vehicle chassis</strong> designed
+                            using tube-frame geometry. FEA and dynamic simulations were performed to ensure that
+                            high-stress regions were reinforced while keeping the overall mass optimized for
+                            performance.
+                        </p>
+
+                        <p>
+                            The final design met safety and performance criteria, ready for manufacturing and on-track
+                            evaluation.
+                        </p>
                     </div>
-                    <div class="col-6 col-12-mobile">
-                        <video autoplay loop muted width="100%">
-                            <source src="videos/heat_conduction_video.mp4" type="video/mp4">
+
+                    <div class="project-media">
+                        <img src="images/academic/supra/chassis_integration.jpg" alt="Vehicle Chassis CAD" />
+                        <img src="images/academic/supra/frame_model.jpg" alt="Frame Model CAD" />
+                    </div>
+                </div>
+
+                <!-- 3. Cost Analysis & Event -->
+                <div class="project-section">
+                    <div class="project-text">
+                        <h3>Cost Analysis & Competition Performance</h3>
+
+                        <p>
+                            I prepared a detailed <strong>cost analysis report</strong> covering materials, machining,
+                            and manufacturing feasibility. Each part was benchmarked for cost efficiency and compliance
+                            with SAE India’s budget criteria.
+                        </p>
+
+                        <p>
+                            The vehicle was successfully presented and competed at the national event, demonstrating
+                            robust design, precision manufacturing, and collaborative teamwork.
+                        </p>
+                    </div>
+
+                    <div class="project-media">
+                        <video autoplay loop muted controls>
+                            <source src="images/academic/supra/car_run.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
+                        <p style="font-size:0.85em; color:#aaa;">Final vehicle testing and track run</p>
                     </div>
                 </div>
 
                 <footer>
-                    <a href="academic_projects.html" class="button scrolly">Back to M.Tech Projects</a>
+                    <a href="academic_projects.html" class="button scrolly button-back">← Back to Projects</a>
                 </footer>
-
             </div>
         </section>
     </div>
 
     <!-- Footer -->
-	<div id="footer">
-
-		<!-- Copyright -->
-		<ul class="copyright">
-			<li>&#9993; affankhanofficial99@gmail.com</li>
-			<li>&phone; 9999813871</li>
-		</ul>
-
-	</div>
+    <div id="footer">
+        <ul class="copyright">
+            <li>&#9993; affankhanofficial99@gmail.com</li>
+            <li>&phone; 9999813871</li>
+        </ul>
+    </div>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
