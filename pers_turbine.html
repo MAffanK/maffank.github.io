@@ -104,9 +104,13 @@
             <nav id="nav">
                 <ul>
                     <li><a href="index.html#top"><span class="icon solid fa-home">Intro</span></a></li>
+                    <li><a href="index.html#featured" id="featured-link"><span
+                                class="icon solid fa-star">Featured</span></a></li>
                     <li><a href="index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
                     <li><a href="index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
-                    <li><a href="index.html#accolades"><span class="icon solid fa-trophy">Accolades</span></a></li>
+                    <li><a href="index.html#accolades" id="accolades-link"><span
+                                class="icon solid fa-trophy">Accolades</span></a>
+                    </li>
                     <li><a href="index.html#contact"><span class="icon solid fa-envelope">Contact</span></a></li>
                 </ul>
             </nav>
@@ -136,9 +140,11 @@
 
                 <!-- Banner -->
                 <a href="#" class="image featured">
-                    <img src="images/academic/CFD/turbine_banner.png" alt="Turbine CFD Banner"
+                    <img src="images/personal/blade.jpg" alt="Supra SAE India Vehicle Banner"
                         style="width:90%; margin:auto; display:block; border-radius:10px;" />
                 </a>
+
+
 
                 <!-- 1. CFD Simulation -->
                 <div class="project-section">
@@ -152,6 +158,7 @@
                             for different blade geometries and flow rates.
                         </p>
 
+
                         <p>
                             The obtained torque and power outputs were
                             <strong>validated using velocity triangle theory</strong>, ensuring that CFD results
@@ -162,17 +169,27 @@
                             This CFD dataset formed the foundation for training a surrogate model that could predict
                             efficiency rapidly without repeated full simulations.
                         </p>
+
                     </div>
+
 
                     <div class="project-video">
                         <video autoplay loop muted controls>
-                            <source src="videos/turbine_velocity.mp4" type="video/mp4">
+                            <source src="videos/Run2.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
+
+                        <video autoplay loop muted controls>
+                            <source src="videos/Run1_1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
                         <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
                             Velocity contour animation from dynamic mesh simulation
                         </p>
                     </div>
+
+
                 </div>
 
                 <!-- 2. Machine Learning Model -->
