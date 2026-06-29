@@ -1,181 +1,142 @@
-/*
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+/* =====================================================================
+   Affan Khan — Portfolio  ·  vanilla JS (no dependencies)
+   ===================================================================== */
+(function () {
+  "use strict";
 
-(function ($) {
+  /* ---- Sticky header shadow on scroll ---- */
+  var header = document.querySelector(".site-header");
+  function onScroll() {
+    if (header) header.classList.toggle("scrolled", window.scrollY > 8);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
-	var $window = $(window),
-		$body = $('body'),
-		$nav = $('#nav');
+  /* ---- Mobile nav toggle ---- */
+  var toggle = document.querySelector(".nav-toggle");
+  var body = document.body;
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      body.classList.toggle("nav-open");
+      var open = body.classList.contains("nav-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    // close the menu when a link is tapped
+    document.querySelectorAll(".nav-links a").forEach(function (a) {
+      a.addEventListener("click", function () { body.classList.remove("nav-open"); });
+    });
+  }
 
-	// Breakpoints.
-	breakpoints({
-		wide: ['961px', '1880px'],
-		normal: ['961px', '1620px'],
-		narrow: ['961px', '1320px'],
-		narrower: ['737px', '960px'],
-		mobile: [null, '736px']
-	});
+  /* ---- Scroll reveal ---- */
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && revealEls.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("in"); });
+  }
 
-	// Play initial animations on page load.
-	$window.on('load', function () {
-		window.setTimeout(function () {
-			$body.removeClass('is-preload');
-		}, 100);
-	});
+  /* ---- Active nav link based on section in view (home page) ---- */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href*="#"]'));
+  var sections = navLinks
+    .map(function (a) {
+      var id = a.getAttribute("href").split("#")[1];
+      return id ? document.getElementById(id) : null;
+    })
+    .filter(Boolean);
+  if (sections.length && "IntersectionObserver" in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          var id = e.target.id;
+          navLinks.forEach(function (a) {
+            a.classList.toggle("active", a.getAttribute("href").indexOf("#" + id) !== -1);
+          });
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    sections.forEach(function (s) { spy.observe(s); });
+  }
 
-	// Nav.
-	var $nav_a = $nav.find('a');
+  /* ---- Accolades card deck (select to enlarge + highlight) ---- */
+  document.querySelectorAll(".deck").forEach(function (deck) {
+    var track = deck.querySelector(".deck-track");
+    var cards = Array.prototype.slice.call(deck.querySelectorAll(".deck-card"));
+    var prev = deck.querySelector(".deck-prev");
+    var next = deck.querySelector(".deck-next");
+    var now = deck.querySelector(".deck-now");
+    if (!track || !cards.length) return;
 
-	$nav_a
-		.addClass('scrolly')
-		.on('click', function (e) {
+    var active = 0;
+    cards.forEach(function (c, i) { if (c.classList.contains("is-active")) active = i; });
 
-			var $this = $(this);
+    function center(card) {
+      var left = card.offsetLeft + card.offsetWidth / 2 - track.clientWidth / 2;
+      track.scrollTo({ left: left, behavior: "smooth" });
+    }
 
-			// External link? Bail.
-			if ($this.attr('href').charAt(0) != '#')
-				return;
+    // update which card looks active (no scrolling)
+    function highlight(i) {
+      active = Math.max(0, Math.min(cards.length - 1, i));
+      cards.forEach(function (c, idx) {
+        var on = idx === active;
+        c.classList.toggle("is-active", on);
+        c.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      if (now) now.textContent = active + 1;
+    }
 
-			// Prevent default.
-			e.preventDefault();
+    function setActive(i, scroll) {
+      highlight(i);
+      if (scroll !== false) center(cards[active]);
+    }
 
-			// Deactivate all links.
-			$nav_a.removeClass('active');
+    // index of the card whose centre is closest to the deck's centre
+    function nearestIndex() {
+      var mid = track.scrollLeft + track.clientWidth / 2;
+      var best = 0, bestDist = Infinity;
+      cards.forEach(function (c, idx) {
+        var d = Math.abs((c.offsetLeft + c.offsetWidth / 2) - mid);
+        if (d < bestDist) { bestDist = d; best = idx; }
+      });
+      return best;
+    }
 
-			// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
-			$this
-				.addClass('active')
-				.addClass('active-locked');
+    if (prev) prev.addEventListener("click", function () { setActive(active - 1); });
+    if (next) next.addEventListener("click", function () { setActive(active + 1); });
 
-		})
-		.each(function () {
+    // hover + mouse-wheel steps through the cards (one card per notch)
+    var wheelLock = false;
+    track.addEventListener("wheel", function (e) {
+      var delta = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+      if (!delta) return;
+      var dir = delta > 0 ? 1 : -1;
+      // at an edge and pushing further outward → let the page scroll normally
+      if ((dir < 0 && active === 0) || (dir > 0 && active === cards.length - 1)) return;
+      e.preventDefault();
+      if (wheelLock) return;
+      wheelLock = true;
+      setTimeout(function () { wheelLock = false; }, 240);
+      setActive(active + dir);
+    }, { passive: false });
 
-			var $this = $(this),
-				id = $this.attr('href'),
-				$section = $(id);
+    // keep the highlight in sync when scrolled by drag/touch (debounced)
+    var t;
+    track.addEventListener("scroll", function () {
+      clearTimeout(t);
+      t = setTimeout(function () { highlight(nearestIndex()); }, 90);
+    }, { passive: true });
 
-			// No section for this link? Bail.
-			if ($section.length < 1)
-				return;
+    // sync classes/count on load WITHOUT auto-scrolling the page to the deck
+    setActive(active, false);
+  });
 
-			// Scrollex.
-			$section.scrollex({
-				mode: 'middle',
-				top: '-10vh',
-				bottom: '-10vh',
-				initialize: function () {
-
-					// Deactivate section.
-					$section.addClass('inactive');
-
-				},
-				enter: function () {
-
-					// Activate section.
-					$section.removeClass('inactive');
-
-					// No locked links? Deactivate all links and activate this section's one.
-					if ($nav_a.filter('.active-locked').length == 0) {
-
-						$nav_a.removeClass('active');
-						$this.addClass('active');
-
-					}
-
-					// Otherwise, if this section's link is the one that's locked, unlock it.
-					else if ($this.hasClass('active-locked'))
-						$this.removeClass('active-locked');
-
-				}
-			});
-
-		});
-
-	// Scrolly.
-	$('.scrolly').scrolly();
-
-	// Header (narrower + mobile).
-
-	// Toggle.
-	$(
-		'<div id="headerToggle">' +
-		'<a href="#header" class="toggle"></a>' +
-		'</div>'
-	)
-		.appendTo($body);
-
-	// Header.
-	$('#header')
-		.panel({
-			delay: 500,
-			hideOnClick: true,
-			hideOnSwipe: true,
-			resetScroll: true,
-			resetForms: true,
-			side: 'left',
-			target: $body,
-			visibleClass: 'header-visible'
-		});
-
-})(jQuery);
-
-/* Addtional JS */
-
-// Accolades Slider
-// -- Corrected Stacked Deck of Cards Logic -- //
-document.addEventListener('DOMContentLoaded', function () {
-	const deck = document.querySelector('.stacked-deck');
-	if (deck) {
-		const nextBtn = document.querySelector('.next-card-btn');
-		const prevBtn = document.querySelector('.prev-card-btn');
-
-		function cycleCards(direction) {
-			// Get the current order of cards every time the function is called
-			const cards = Array.from(deck.querySelectorAll('.card'));
-			const activeCard = deck.querySelector('.card.active');
-
-			if (direction === 'next') {
-				// Move the current top card to the very end of the deck in the HTML
-				deck.appendChild(activeCard);
-			} else { // 'prev'
-				// Get the last card in the deck and move it to the beginning
-				const lastCard = cards[cards.length - 1];
-				deck.insertBefore(lastCard, deck.firstChild);
-			}
-
-			// Re-query the cards to get the new order after our change
-			const newCards = Array.from(deck.querySelectorAll('.card'));
-
-			// Re-apply styles and classes to all cards based on their new order
-			newCards.forEach((card, index) => {
-				card.classList.remove('active');
-
-				if (index < 3) {
-					card.style.display = 'block';
-					card.style.transform = `translateX(${index * 50}px) scale(${1 - index * 0.1})`;
-					card.style.zIndex = newCards.length - index;
-				} else {
-					card.style.display = 'none';
-				}
-			});
-
-			// Make the new top card active
-			if (newCards.length > 0) {
-				newCards[0].classList.add('active');
-			}
-		}
-
-		nextBtn.addEventListener('click', () => cycleCards('next'));
-		prevBtn.addEventListener('click', () => cycleCards('prev'));
-
-		// Initial setup on page load
-		const initialCards = Array.from(deck.querySelectorAll('.card'));
-		initialCards.forEach((card, index) => {
-			card.style.zIndex = initialCards.length - index;
-			card.style.display = (index < 3) ? 'block' : 'none';
-		});
-	}
-});
+  /* ---- Footer year ---- */
+  document.querySelectorAll("[data-year]").forEach(function (el) {
+    el.textContent = new Date().getFullYear();
+  });
+})();

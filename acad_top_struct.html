@@ -1,117 +1,120 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Generative Design for Topology Optimization - Affan Khan</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Generative Design for Topology Optimisation — Affan Khan</title>
+  <meta name="description" content="An M.Tech project pairing a conditional GAN with finite-element analysis to generate optimal structural topologies in seconds." />
+  <link rel="icon" href="assets/img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-<body class="is-preload">
+<body>
 
-    <div id="header">
-        <div class="top">
-            <div id="logo">
-                <span class="image avatar48"><img src="images/logo2.jpeg" alt="" class="logo-image" /></span>
-                <h1 id="title">Affan Khan</h1>
-                <p>Mechanical Engineer</p>
-            </div>
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.html#top"><span class="icon solid fa-home">Intro</span></a></li>
-                    <li><a href="index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
-                    <li><a href="index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
-                    <li><a href="index.html#accolades"><span class="icon solid fa-trophy">Accolades</span></a></li>
-                    <li><a href="index.html#contact"><span class="icon solid fa-envelope">Contact</span></a></li>
-                </ul>
-            </nav>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="assets/img/avatar.jpeg" alt="Affan Khan" />
+        <span>Affan Khan<small>Mechanical Engineer</small></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#accolades">Accolades</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li class="nav-cta"><a href="index.html#contact" class="btn btn-primary">Get in touch</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="proj-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a> / <a href="academic_projects.html">Academic</a> / Generative Design</div>
+        <h1>Generative Design for Structural Topology Optimisation</h1>
+        <div class="meta">
+          <span class="tag">cGAN</span><span class="tag">Deep Learning</span><span class="tag">FEA</span>
+          <span class="tag">ABAQUS</span><span class="tag">MATLAB</span>
         </div>
-        <div class="bottom">
-            <ul class="icons">
-                <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+        <p class="proj-lead">
+          An M.Tech project combining machine learning with finite-element analysis to generate optimal structural
+          layouts in seconds instead of hours.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:32px;">
+      <div class="container">
+
+        <div class="feature-row">
+          <div class="feature-text">
+            <h3>Project overview</h3>
+            <p>
+              This project introduces a framework that leverages machine learning to accelerate structural topology
+              optimisation. The goal was a generative model that predicts an optimal material layout for a given set of
+              boundary conditions and loads — drastically reducing the computational time required by traditional
+              iterative FEA.
+            </p>
+          </div>
+          <div class="feature-media">
+            <div class="media-placeholder" style="aspect-ratio:4/3;border-radius:var(--radius-sm);border:1px solid var(--border);">
+              <span class="icon"><i class="fas fa-diagram-project"></i></span><small>Concept image coming soon</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-row reverse">
+          <div class="feature-text">
+            <h3>Methodology &amp; tools</h3>
+            <p>
+              A large dataset of optimised topologies was generated using <strong>ABAQUS</strong> and
+              <strong>MATLAB</strong>, then used to train a <strong>Conditional Generative Adversarial Network
+              (cGAN)</strong>. The trained model produces a highly efficient structural design in seconds — a process
+              that previously took hours of simulation. Results were validated by running FEA on the generated designs
+              to confirm structural integrity.
+            </p>
+          </div>
+          <div class="feature-media">
+            <div class="media-placeholder" style="aspect-ratio:4/3;border-radius:var(--radius-sm);border:1px solid var(--border);">
+              <span class="icon"><i class="fas fa-network-wired"></i></span><small>Process visual coming soon</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-row" style="grid-template-columns:1fr;">
+          <div class="feature-text">
+            <h3>Key achievements</h3>
+            <ul>
+              <li>Reduced design computation time by over <strong>95%</strong>.</li>
+              <li>Predicted topologies with <strong>98%</strong> structural-performance accuracy.</li>
+              <li>Built a framework generalisable across a variety of structural problems.</li>
             </ul>
+          </div>
         </div>
+
+        <div class="center mt-lg">
+          <a href="academic_projects.html" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Back to Academic Projects</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:0;padding-top:0;">
+        <span>© <span data-year></span> Affan Khan. All rights reserved.</span>
+        <span><a href="index.html#contact">Get in touch</a></span>
+      </div>
     </div>
+  </footer>
 
-    <div id="main">
-        <section id="project-detail" class="two">
-            <div class="container">
-
-                <header>
-                    <h2 class="section-title">Generative Design Framework for Structural Topology Optimization</h2>
-                    <p>An M.Tech project combining Machine Learning with Finite Element Analysis (FEA).</p>
-                </header>
-
-                <div class="row" style="margin-top: 2em;">
-                    <div class="col-7 col-12-mobile" style="text-align: left;">
-                        <h3>Project Overview</h3>
-                        <p>
-                            This project introduces a novel framework that leverages Machine Learning to accelerate the
-                            process of structural topology optimization. The primary goal was to create a generative
-                            model capable of predicting an optimal material layout for a given set of boundary
-                            conditions and loads, drastically reducing the computational time required by traditional
-                            iterative FEA methods.
-                        </p>
-                    </div>
-                    <div class="col-5 col-12-mobile">
-                        <a href="#" class="image fit"><img src="images/overview-image.jpg"
-                                alt="Generative Design Concept"></a>
-                    </div>
-                </div>
-
-                <div class="row" style="margin-top: 2em;">
-                    <div class="col-5 col-12-mobile">
-                        <video autoplay loop muted width="100%">
-                            <source src="videos/topology-process.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="col-7 col-12-mobile" style="text-align: left;">
-                        <h3>Methodology & Tools</h3>
-                        <p>
-                            A large dataset of optimized topologies was generated using ABAQUS and MATLAB. This dataset
-                            was then used to train a Conditional Generative Adversarial Network (cGAN). The trained
-                            model can now produce a highly efficient structural design in seconds, a process that
-                            previously took hours of simulation time. The results were validated by performing FEA on
-                            the generated designs to confirm their structural integrity and performance.
-                        </p>
-                    </div>
-                </div>
-
-                <div style="text-align: left; margin-top: 3em;">
-                    <h4>Key Achievements</h4>
-                    <ul>
-                        <li>Reduced design computation time by over 95%.</li>
-                        <li>The ML model predicts topologies with 98% structural performance accuracy.</li>
-                        <li>Successfully created a framework applicable to various structural problems.</li>
-                    </ul>
-                </div>
-
-                <footer>
-                    <a href="academic_projects.html" class="button scrolly">Back to Academic Projects</a>
-                </footer>
-
-            </div>
-        </section>
-    </div>
-
-    <div id="footer">
-        <ul class="copyright">
-            <li>&#9993; affankhanofficial99@gmail.com</li>
-            <li>&phone; 9999813871</li>
-        </ul>
-    </div>
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>

@@ -1,347 +1,146 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>SAE ISS Aero Design Challenge - Affan Khan</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <style>
-        /* ---------- Reused styling tuned for SAE page (same visual language as CFD page) ---------- */
-        .project-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2em;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 18px;
-            padding: 2em;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
-            margin-bottom: 3em;
-            transition: transform 0.3s ease, box-shadow 0.4s ease;
-        }
-
-        .project-section:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 25px rgba(254, 162, 24, 0.25);
-        }
-
-        .project-text {
-            flex: 1;
-            min-width: 280px;
-            text-align: left;
-        }
-
-        .project-text h3 {
-            font-weight: 700;
-            margin-bottom: 0.6em;
-        }
-
-        .project-text p {
-            color: #cfcfcf;
-            text-align: justify;
-            font-size: 0.95em;
-            line-height: 1.6em;
-        }
-
-        .project-media {
-            flex: 1;
-            min-width: 320px;
-            text-align: center;
-        }
-
-        .project-media img,
-        .project-media video {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            transition: outline 0.3s ease;
-        }
-
-        .section-title {
-            font-weight: 800;
-        }
-
-        .button-back {
-            margin-top: 2em;
-            display: inline-block;
-            border: 2px solid #84bdf0;
-            color: #ffffff !important;
-            border-radius: 8px;
-            padding: 0.75em 1.5em;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-
-        .button-back:hover {
-            background: #ffffff;
-            color: #84bdf0 !important;
-            border-color: #84bdf0;
-        }
-
-        .spec-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 0.6em;
-            margin-top: 0.6em;
-        }
-
-        .spec-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 10px;
-            padding: 0.8em;
-            text-align: center;
-            font-size: 0.95em;
-        }
-
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 0.8em;
-            margin-top: 1em;
-        }
-
-        @media screen and (max-width: 800px) {
-            .project-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .project-text {
-                text-align: center;
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SAE Aero Design UAV — Affan Khan</title>
+  <meta name="description" content="A student-built 2 m-wingspan payload aircraft for the SAE Aero Design Challenge, with a B.Tech solar-endurance extension." />
+  <link rel="icon" href="assets/img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<!-- MathJax for any equations -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<body>
 
-<body class="is-preload">
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="assets/img/avatar.jpeg" alt="Affan Khan" />
+        <span>Affan Khan<small>Mechanical Engineer</small></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#accolades">Accolades</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li class="nav-cta"><a href="index.html#contact" class="btn btn-primary">Get in touch</a></li>
+      </ul>
+    </div>
+  </header>
 
-    <!-- Header -->
-    <div id="header">
-        <div class="top">
-            <div id="logo">
-                <span class="image avatar48"><img src="images/logo2.jpeg" alt="" class="logo-image" /></span>
-                <h1 id="title">Affan Khan</h1>
-                <p>Maker</p>
-            </div>
+  <main>
+    <section class="proj-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a> / <a href="academic_projects.html">Academic</a> / SAE Aero Design</div>
+        <h1>SAE Aero Design UAV</h1>
+        <div class="meta">
+          <span class="tag">SolidWorks</span><span class="tag">ANSYS CFX / ACP</span><span class="tag">MATLAB</span>
+          <span class="tag">Aerodynamics</span><span class="tag">Composites</span>
+        </div>
+        <p class="proj-lead">
+          A student-built aircraft for the SAE Aero Design Challenge — a 2 m-wingspan, 5 kg-payload UAV, later
+          extended in my B.Tech work with solar-power instrumentation for greatly increased endurance.
+        </p>
+        <div class="proj-banner"><img src="assets/img/projects/aero/photo-1.jpg" alt="SAE Aero aircraft" /></div>
+      </div>
+    </section>
 
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.html#top"><span class="icon solid fa-home">Intro</span></a></li>
-                    <li><a href="index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
-                    <li><a href="index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
-                    <li><a href="index.html#accolades"><span class="icon solid fa-trophy">Accolades</span></a></li>
-                    <li><a href="index.html#contact"><span class="icon solid fa-envelope">Contact</span></a></li>
-                </ul>
-            </nav>
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+
+        <div class="feature-row">
+          <div class="feature-text">
+            <h3>Project summary</h3>
+            <p>
+              The team designed, manufactured and flight-tested a 2 m-wingspan UAV capable of carrying a 5 kg payload,
+              targeting structural efficiency, low drag and robust flight performance. In a B.Tech continuation I
+              proposed integrating solar panels on the upper wing to extend endurance — calculations indicated a
+              sunrise-to-sunset range on the order of <strong>≈ 550 km</strong> under ideal conditions.
+            </p>
+            <div class="equation">\[ P_{\text{solar}} \cdot \eta_{\text{sys}} \approx P_{\text{req}} \]</div>
+          </div>
+          <div class="feature-media">
+            <video autoplay loop muted playsinline controls><source src="assets/video/aero-flight.mp4" type="video/mp4" /></video>
+            <p class="media-caption">Flight test — short hop and cruise.</p>
+          </div>
         </div>
 
-        <div class="bottom">
-            <ul class="icons">
-                <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+        <div class="feature-row reverse">
+          <div class="feature-text">
+            <h3>My role</h3>
+            <p>
+              I was responsible for the <strong>fuselage design</strong> and the <strong>CFD analysis</strong> of the
+              wing and full aircraft. I built the complete CAD model in SolidWorks, ran aerodynamic studies (drag and
+              polar curves), and validated designs in ANSYS — including composite checks with ANSYS ACP. For the B.Tech
+              continuation I designed the solar-power system and carried out the energy and range calculations.
+            </p>
+          </div>
+          <div class="feature-media">
+            <img src="assets/img/projects/aero/photo-2.jpg" alt="Aircraft build" />
+            <p class="media-caption">Airframe during assembly.</p>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-text">
+            <h3>Key specifications</h3>
+            <div class="spec-grid">
+              <div class="spec"><span class="k">Wingspan</span><span class="v">2.0 m</span></div>
+              <div class="spec"><span class="k">Payload</span><span class="v">5 kg</span></div>
+              <div class="spec"><span class="k">Max speed</span><span class="v">20 m/s</span></div>
+              <div class="spec"><span class="k">Cruise speed</span><span class="v">10 m/s</span></div>
+              <div class="spec"><span class="k">Take-off run</span><span class="v">≈ 16 m</span></div>
+              <div class="spec"><span class="k">Solar range</span><span class="v">≈ 550 km</span></div>
+            </div>
+            <p style="margin-top:1em;">
+              Primary materials: balsa ribs, aluminium spars and a carbon-fibre fuselage.
+            </p>
+          </div>
+          <div class="feature-media">
+            <img src="assets/img/projects/aero/photo-3.jpg" alt="Built prototype" />
+            <p class="media-caption">Built prototype, pre-flight.</p>
+          </div>
+        </div>
+
+        <div class="feature-row reverse">
+          <div class="feature-text">
+            <h3>Tools &amp; analysis</h3>
+            <ul>
+              <li><strong>SolidWorks</strong> — full aircraft CAD and manufacturing drawings.</li>
+              <li><strong>ANSYS (CFX/Fluent &amp; ACP)</strong> — aerodynamic CFD, flow visualisation and composite-layup simulation.</li>
+              <li><strong>MATLAB</strong> — drag-vs-velocity and thrust-vs-velocity curves, solar-energy and range predictions.</li>
             </ul>
+            <p><a href="assets/docs/aero-major-project.pdf" target="_blank" rel="noopener" class="card-link">Read the full B.Tech report (PDF) <span class="arrow">→</span></a></p>
+          </div>
+          <div class="feature-media">
+            <img src="assets/img/projects/aero/photo-4.jpg" alt="Aircraft detail" />
+            <p class="media-caption">Field testing.</p>
+          </div>
         </div>
+
+        <div class="center mt-lg">
+          <a href="academic_projects.html" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Back to Academic Projects</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:0;padding-top:0;">
+        <span>© <span data-year></span> Affan Khan. All rights reserved.</span>
+        <span><a href="index.html#contact">Get in touch</a></span>
+      </div>
     </div>
+  </footer>
 
-    <!-- Main -->
-    <div id="main">
-        <section id="project-detail" class="two">
-            <div class="container">
-                <header>
-                    <h2 class="section-title">SAE ISS Aero Design Challenge</h2>
-                    <p>
-                        A student-built airplane project developed for the SAE ISS Aero Design Challenge. The plane was
-                        designed for a 2 m wingspan category with a 5 kg payload target, later extended in my BTech
-                        work to include solar power instrumentation for greatly increased endurance.
-                    </p>
-                </header>
-
-                <a href="#" class="image featured">
-                    <img src="images/academic/SAE/banner_plane.png" alt="SAE Plane Banner"
-                        style="width:90%; margin:auto; display:block; border-radius:10px;" />
-                </a>
-
-                <!-- Project overview -->
-                <div class="project-section">
-                    <div class="project-text">
-                        <h3>Project Summary</h3>
-                        <p>
-                            The team designed, manufactured and flight-tested a 2 m wingspan UAV capable of carrying a
-                            5 kg payload. Primary competition goals were structural efficiency, low drag, and robust
-                            flight performance. In a BTech continuation I proposed integrating solar panels on the
-                            upper wing to extend mission endurance — theoretical calculations indicated a
-                            sunrise-to-sunset
-                            range on the order of <strong>≈ 550 km</strong> under ideal conditions.
-                        </p>
-
-                        <p style="text-align:center; margin-top:0.6em;">
-                            Solar power balance (simplified): <br />
-                            \[
-                            P_{\text{solar}} \cdot \eta_{\text{sys}} \approx P_{\text{req}}
-                            \]
-                        </p>
-                    </div>
-
-                    <div class="project-media">
-                        <video autoplay loop muted controls>
-                            <source src="videos/sae_flight.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
-                            Flight test — short hop and cruise.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Role & responsibilities -->
-                <div class="project-section">
-                    <div class="project-text">
-                        <h3>My Role</h3>
-                        <p>
-                            I was responsible for the fuselage design and the CFD analysis of the wing and full
-                            aircraft.
-                            I created the complete CAD model in SolidWorks, performed aerodynamic studies (drag/polar
-                            curves),
-                            and validated designs through ANSYS (including composite checks with ANSYS ACP). For the
-                            BTech
-                            continuation I designed the solar power system and carried out energy & range calculations.
-                        </p>
-                    </div>
-
-                    <div class="project-media">
-                        <img src="images/academic/SAE/cad_snapshot.png" alt="CAD model snapshot" />
-                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
-                            CAD model overview (SolidWorks).
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Specifications -->
-                <div class="project-section">
-                    <div class="project-text">
-                        <h3>Key Specifications & Performance</h3>
-
-                        <div class="spec-list">
-                            <div class="spec-card">
-                                <strong>Wingspan</strong><br />2.0 m
-                            </div>
-                            <div class="spec-card">
-                                <strong>Payload Capacity</strong><br />5 kg
-                            </div>
-                            <div class="spec-card">
-                                <strong>Primary Materials</strong><br />Balsa ribs · Aluminium spars · Carbon-fiber
-                                fuselage
-                            </div>
-                            <div class="spec-card">
-                                <strong>Max Speed</strong><br />20 m/s
-                            </div>
-                            <div class="spec-card">
-                                <strong>Cruise Speed</strong><br />10 m/s
-                            </div>
-                            <div class="spec-card">
-                                <strong>Takeoff Distance</strong><br />≈ 16 m
-                            </div>
-                            <div class="spec-card">
-                                <strong>Theoretical Range (solar-assisted)</strong><br />≈ 550 km (sunrise→sunset
-                                estimate)
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-media">
-                        <img src="images/academic/SAE/prototype_photo.png" alt="Prototype photo" />
-                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
-                            Built prototype (pre-flight).
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Tools & analysis -->
-                <div class="project-section">
-                    <div class="project-text">
-                        <h3>Tools & Analysis</h3>
-                        <p>
-                            The project combined CAD, CFD, composite analysis and data-driven performance estimation:
-                        </p>
-
-                        <ul>
-                            <li><strong>SolidWorks</strong> — full aircraft CAD and manufacturing drawings.</li>
-                            <li><strong>ANSYS (CFX/Fluent & ACP)</strong> — aerodynamic CFD runs, flow visualization and
-                                composite layup simulation.</li>
-                            <li><strong>MATLAB</strong> — plotting, drag vs velocity curves, propeller thrust vs
-                                velocity, solar energy calculations and range predictions.</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-media">
-                        <img src="images/academic/SAE/ansys_streamline.png" alt="ANSYS flow results" />
-                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
-                            Sample CFD result: streamline & vorticity visualization.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Media gallery -->
-                <div class="project-section" style="flex-direction:column;">
-                    <div class="project-text">
-                        <h3>Media & Manufacturing</h3>
-                        <p>
-                            Below are photos and graphs from the project — CAD renders, manufacturing steps (rib cutting
-                            and spar assembly),
-                            aerodynamic graphs and the team photo.
-                        </p>
-
-                        <div class="media-grid">
-                            <div><img src="images/academic/SAE/manufacturing_1.png" alt="Manufacturing photo 1" /></div>
-                            <div><img src="images/academic/SAE/manufacturing_2.png" alt="Manufacturing photo 2" /></div>
-                            <div><img src="images/academic/SAE/graph_drag_vs_v.png" alt="Drag vs velocity graph" />
-                            </div>
-                            <div><img src="images/academic/SAE/graph_prop_vs_v.png"
-                                    alt="Propeller thrust vs velocity" /></div>
-                            <div><img src="images/academic/SAE/team_photo.jpg" alt="Team photo" /></div>
-                            <div><img src="images/academic/SAE/solar_layout.png" alt="Solar layout drawing" /></div>
-                        </div>
-                    </div>
-
-                    <div class="project-media" style="width:100%; margin-top:1em;">
-                        <video controls>
-                            <source src="videos/sae_manufacturing.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
-                            Manufacturing process and ground testing video.
-                        </p>
-                    </div>
-                </div>
-
-                <footer>
-                    <a href="academic_projects.html" class="button scrolly button-back">← Back to M.Tech Projects</a>
-                </footer>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <div id="footer">
-        <ul class="copyright">
-            <li>&#9993; affankhanofficial99@gmail.com</li>
-            <li>&phone; 9999813871</li>
-        </ul>
-    </div>
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>

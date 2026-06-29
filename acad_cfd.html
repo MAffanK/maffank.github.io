@@ -1,324 +1,137 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>CFD Programming Project - Affan Khan</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <style>
-        /* ---------- Custom Styling (1-column layout matching Prologue) ---------- */
-        .project-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2em;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 18px;
-            padding: 2em;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
-            margin-bottom: 3em;
-            transition: transform 0.3s ease, box-shadow 0.4s ease;
-        }
-
-        .project-section:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 25px rgba(254, 162, 24, 0.25);
-        }
-
-        .project-text {
-            flex: 1;
-            min-width: 280px;
-            text-align: left;
-        }
-
-        .project-text h3 {
-
-            font-weight: 700;
-            margin-bottom: 0.6em;
-        }
-
-        .project-text p {
-            color: 0 0 25px rgba(213, 26, 26, 0.25);
-            text-align: justify;
-            font-size: 0.95em;
-            line-height: 1.6em;
-        }
-
-        .project-video {
-            flex: 1;
-            min-width: 320px;
-            text-align: center;
-        }
-
-        .project-video video {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            /*outline: 1px solid rgba(0, 255, 255, 0.2);*/
-            transition: outline 0.3s ease;
-        }
-
-
-
-        .section-title {
-
-            font-weight: 800;
-        }
-
-        .button-back {
-            margin-top: 2em;
-            display: inline-block;
-            border: 2px solid #84bdf0;
-            color: #ffffff !important;
-            border-radius: 8px;
-            padding: 0.75em 1.5em;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-
-        .button-back:hover {
-            background: #ffffff;
-            color: #84bdf0 !important;
-
-            /* Add this line to set the border color on hover */
-            border-color: #84bdf0;
-        }
-
-        @media screen and (max-width: 800px) {
-            .project-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .project-text {
-                text-align: center;
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CFD Programming Project — Affan Khan</title>
+  <meta name="description" content="Numerical CFD solvers written from scratch in C and MATLAB — 2D transient heat conduction, lid-driven cavity flow and 1D wave propagation." />
+  <link rel="icon" href="assets/img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<!-- MathJax for rendering equations -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<body>
 
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="assets/img/avatar.jpeg" alt="Affan Khan" />
+        <span>Affan Khan<small>Mechanical Engineer</small></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#accolades">Accolades</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li class="nav-cta"><a href="index.html#contact" class="btn btn-primary">Get in touch</a></li>
+      </ul>
+    </div>
+  </header>
 
+  <main>
+    <section class="proj-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a> / <a href="academic_projects.html">Academic</a> / CFD Programming</div>
+        <h1>CFD Programming Project</h1>
+        <div class="meta">
+          <span class="tag">C</span><span class="tag">MATLAB</span><span class="tag">Finite Difference</span>
+          <span class="tag">ME543 · IIT Guwahati</span>
+        </div>
+        <p class="proj-lead">
+          Developed during <strong>ME543 — Computational Fluid Dynamics</strong> at IIT Guwahati, this project
+          implements numerical solvers written from scratch in C and MATLAB for classic CFD problems.
+        </p>
+        <div class="proj-banner"><img src="assets/img/projects/cfd/fdm.png" alt="CFD finite-difference visualisation" /></div>
+      </div>
+    </section>
 
-<body class="is-preload">
+    <section class="section" style="padding-top:0;">
+      <div class="container">
 
-    <!-- Header -->
-    <div id="header">
-        <div class="top">
-            <div id="logo">
-                <span class="image avatar48"><img src="images/logo2.jpeg" alt="" class="logo-image" /></span>
-                <h1 id="title">Affan Khan</h1>
-                <p>Maker</p>
-            </div>
-
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.html#top"><span class="icon solid fa-home">Intro</span></a></li>
-                    <li><a href="index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
-                    <li><a href="index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
-                    <li><a href="index.html#accolades"><span class="icon solid fa-trophy">Accolades</span></a></li>
-                    <li><a href="index.html#contact"><span class="icon solid fa-envelope">Contact</span></a></li>
-
-                </ul>
-            </nav>
+        <div class="feature-row">
+          <div class="feature-text">
+            <h3>2D transient heat conduction</h3>
+            <p>
+              A simulation of how heat spreads through a rectangular metal plate over time, using an
+              <strong>explicit finite-difference method</strong>. The solver computes temperature at every grid point
+              and time step, producing a smooth animation of the entire transient process.
+            </p>
+            <div class="equation">\[ \frac{\partial T}{\partial t} = \alpha \left( \frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} \right) \]</div>
+            <p>
+              The plate starts cold and gradually reaches steady state as heat enters from the top and bottom surfaces
+              at fixed temperatures — visualising the physical beauty of thermal diffusion.
+            </p>
+          </div>
+          <div class="feature-media">
+            <video autoplay loop muted playsinline controls><source src="assets/video/heat-conduction.mp4" type="video/mp4" /></video>
+            <p class="media-caption">Transient temperature evolution in a rectangular plate.</p>
+          </div>
         </div>
 
-        <div class="bottom">
-            <ul class="icons">
-                <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-            </ul>
+        <div class="feature-row reverse">
+          <div class="feature-text">
+            <h3>Lid-driven cavity flow</h3>
+            <p>
+              A classic CFD benchmark modelling fluid trapped inside a square cavity. The top lid slides horizontally
+              while the other walls stay fixed, creating a circulating vortex.
+            </p>
+            <div class="equation">\[ \nabla^2 \psi = -\omega \quad \text{and} \quad \frac{D\omega}{Dt} = \nu \nabla^2 \omega \]</div>
+            <p>
+              Implemented using the <strong>vorticity–stream-function formulation</strong>, the solver captures the
+              main vortex and smaller corner eddies as the flow develops toward steady state.
+            </p>
+          </div>
+          <div class="feature-media">
+            <video autoplay loop muted playsinline controls><source src="assets/video/lid-driven-cavity.mp4" type="video/mp4" /></video>
+            <img src="assets/img/projects/cfd/streamline.png" alt="Streamlines for lid-driven cavity" />
+            <p class="media-caption">Flow evolution and streamline plot (Re = 400) showing primary and secondary vortices.</p>
+          </div>
         </div>
+
+        <div class="feature-row">
+          <div class="feature-text">
+            <h3>1D wave propagation</h3>
+            <p>
+              A one-dimensional wave simulation showing how signals travel and decay over time, solved using multiple
+              numerical schemes — <strong>Upwind</strong>, <strong>Lax</strong> and <strong>MacCormack</strong>.
+            </p>
+            <div class="equation">\[ \frac{\partial u}{\partial t} + c\,\frac{\partial u}{\partial x} = 0 \]</div>
+            <p>
+              Two wave types were tested — a sharp step pulse and a smooth sine wave — to compare stability and
+              numerical diffusion across schemes under identical conditions.
+            </p>
+          </div>
+          <div class="feature-media">
+            <video autoplay loop muted playsinline controls><source src="assets/video/wave-step.mp4" type="video/mp4" /></video>
+            <p class="media-caption">Step-wave propagation (\(C_0 = 0.6\)).</p>
+            <video autoplay loop muted playsinline controls><source src="assets/video/wave-sine.mp4" type="video/mp4" /></video>
+            <p class="media-caption">Sine-wave propagation (\(C_0 = 0.6\)).</p>
+          </div>
+        </div>
+
+        <div class="center mt-lg">
+          <a href="academic_projects.html" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Back to Academic Projects</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:0;padding-top:0;">
+        <span>© <span data-year></span> Affan Khan. All rights reserved.</span>
+        <span><a href="index.html#contact">Get in touch</a></span>
+      </div>
     </div>
+  </footer>
 
-    <!-- Main -->
-    <div id="main">
-        <section id="project-detail" class="two">
-            <div class="container">
-                <header>
-                    <h2 class="section-title">CFD Programming Project</h2>
-                    <p>
-                        Developed during <strong>ME543 – Computational Fluid Dynamics</strong> at IIT Guwahati, this
-                        project demonstrates numerical solvers written from scratch in C and MATLAB for classic CFD
-                        problems.
-                    </p>
-                </header>
-
-                <a href="#" class="image featured">
-                    <img src="images/academic/CFD/fdm.png" alt="CFD Simulation Banner"
-                        style="width:90%; margin:auto; display:block; border-radius:10px;" />
-                </a>
-
-
-
-                <!-- 1. 2D Transient Heat Conduction -->
-                <div class="project-section">
-                    <div class="project-text">
-                        <h3>2D Transient Heat Conduction</h3>
-
-                        <p>
-                            A simulation of how heat spreads through a rectangular metal plate over time,
-                            developed using an <strong>explicit finite-difference method</strong>.
-                            The solver calculates the temperature at every grid point and time step,
-                            creating a smooth animation of the entire transient process.
-                        </p>
-
-                        <p style="text-align:center;">
-                            \[
-                            \frac{\partial T}{\partial t} =
-                            \alpha \left( \frac{\partial^2 T}{\partial x^2} +
-                            \frac{\partial^2 T}{\partial y^2} \right)
-                            \]
-                        </p>
-
-                        <p>
-                            The plate starts cold and gradually reaches steady state
-                            as heat enters from the top and bottom surfaces at fixed temperatures.
-                            This project visualizes the physical beauty of thermal diffusion and
-                            how conduction stabilizes over time.
-                        </p>
-                    </div>
-
-                    <div class="project-video">
-                        <video autoplay loop muted controls>
-                            <source src="videos/heat_conduction_video.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
-                            Transient temperature evolution in a rectangular plate
-                        </p>
-                    </div>
-                </div>
-
-
-
-
-
-
-                <!-- 2. Lid Driven Cavity -->
-                <div class="project-section">
-                    <div class="project-text">
-                        <h3>Lid-Driven Cavity Flow</h3>
-
-                        <p>
-                            A classic Computational Fluid Dynamics (CFD) problem that models the motion of fluid trapped
-                            inside a square cavity.
-                            The top lid slides horizontally while the remaining walls are stationary, creating a
-                            circulating vortex inside the domain.
-                        </p>
-
-                        <p style="text-align:center;">
-                            \[
-                            \nabla^2 \psi = -\omega
-                            \quad \text{and} \quad
-                            \frac{D\omega}{Dt} = \nu \nabla^2 \omega
-                            \]
-                        </p>
-
-                        <p>
-                            Implemented using the <strong>vorticity–stream function formulation</strong>,
-                            this solver captures the formation of the main vortex and smaller corner eddies
-                            as the flow develops toward steady state.
-                            The results are visualized through animated vorticity contours and streamlines.
-                        </p>
-                    </div>
-
-                    <div class="project-video">
-                        <video autoplay loop muted controls>
-                            <source src="videos/lid_driven_cavity_flow.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
-                            Flow evolution inside a square cavity (Re = 400)
-                        </p>
-
-                        <img src="images/academic/CFD/streamline.png" alt="Streamlines for Lid-Driven Cavity"
-                            style="margin-top:1.2em; border-radius:10px; width:100%; opacity:0.95;">
-                        <p style="font-size:0.85em; color:#aaa; margin-top:0.4em;">
-                            Streamline plot showing primary and secondary vortices.
-                        </p>
-                    </div>
-                </div>
-
-
-
-
-                <!-- 3. 1D Wave / Advection Equation -->
-                <div class="project-section">
-                    <div class="project-text">
-                        <h3>1D Wave Propagation</h3>
-
-                        <p>
-                            A one-dimensional wave simulation demonstrating how signals travel and
-                            decay over time in a medium. The governing equation represents
-                            simple wave motion, solved using multiple numerical schemes including
-                            <strong>Upwind</strong>, <strong>Lax</strong>, and <strong>MacCormack</strong>.
-                        </p>
-
-                        <p style="text-align:center;">
-                            \[
-                            \frac{\partial u}{\partial t} +
-                            c\,\frac{\partial u}{\partial x} = 0
-                            \]
-                        </p>
-
-                        <p>
-                            Two types of waves were tested — a sharp step pulse and a smooth sine wave —
-                            to compare stability and diffusion across schemes.
-                            The animation below shows how each method captures wave motion and amplitude
-                            decay under identical conditions.
-                        </p>
-                    </div>
-
-                    <div class="project-video">
-                        <video autoplay loop muted controls>
-                            <source src="videos/step.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
-                            Step-wave propagation (\(C_0 = 0.6\))
-                        </p>
-
-                        <video autoplay loop muted controls style="margin-top:1.5em;">
-                            <source src="videos/sine.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p style="font-size:0.85em; color:#aaa; margin-top:0.5em;">
-                            Sine-wave propagation (\(C_0 = 0.6\))
-                        </p>
-                    </div>
-                </div>
-
-
-
-
-                <footer>
-                    <a href="academic_projects.html" class="button scrolly button-back">← Back to M.Tech Projects</a>
-                </footer>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <div id="footer">
-        <ul class="copyright">
-            <li>&#9993; affankhanofficial99@gmail.com</li>
-            <li>&phone; 9999813871</li>
-        </ul>
-    </div>
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
