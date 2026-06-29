@@ -261,12 +261,17 @@
             </div>
           </div>
 
-          <!-- Netlify Forms: submissions appear in your Netlify dashboard (Forms tab)
-               and can be emailed to you. Works automatically once deployed on Netlify.
-               If you host elsewhere, swap this for a Formspree endpoint instead. -->
-          <form class="reveal" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contact" />
-            <p class="hp"><label>Leave this empty: <input name="bot-field" /></label></p>
+          <!-- CONTACT FORM
+               Now uses a simple mailto: clicking "Send" opens the visitor's email app with
+               the message pre-addressed to you, and it arrives in your Gmail once they send.
+
+               TO HAVE SUBMISSIONS EMAILED TO YOU AUTOMATICALLY (recommended):
+                 1) Sign up free at https://formspree.io
+                 2) Create a form and copy its ID (e.g. https://formspree.io/f/abcwxyz)
+                 3) Replace the <form ...> line below with:
+                    <form class="reveal" action="https://formspree.io/f/abcwxyz" method="POST">
+                    and remove enctype. (Keep the fields as-is.) -->
+          <form class="reveal" action="mailto:affankhanofficial99@gmail.com" method="post" enctype="text/plain">
             <div class="form-field">
               <label for="name">Name</label>
               <input id="name" type="text" name="name" placeholder="Your name" required />
