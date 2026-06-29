@@ -4,14 +4,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Generative Design for Topology Optimisation — Affan Khan</title>
-  <meta name="description" content="An M.Tech project pairing a conditional GAN with finite-element analysis to generate optimal structural topologies in seconds." />
+  <title>Generative AI for Topology Optimisation — Affan Khan</title>
+  <meta name="description" content="M.Tech research: a generative-design framework with deep-learning surrogates for structural and thermal-fluid topology optimisation, reaching R² 0.9998 on optimised datasets." />
   <link rel="icon" href="assets/img/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -20,15 +21,15 @@
     <div class="container nav">
       <a href="index.html" class="brand">
         <img src="assets/img/avatar.jpeg" alt="Affan Khan" />
-        <span>Affan Khan<small>Mechanical Engineer</small></span>
+        <span>Affan Khan<small>Computational Mechanics &amp; AI</small></span>
       </a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
       <ul class="nav-links">
         <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
         <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#accolades">Accolades</a></li>
         <li><a href="index.html#contact">Contact</a></li>
-        <li class="nav-cta"><a href="index.html#contact" class="btn btn-primary">Get in touch</a></li>
+        <li class="nav-cta"><a href="assets/docs/affan-khan-resume.pdf" target="_blank" rel="noopener" class="btn btn-primary">Résumé</a></li>
       </ul>
     </div>
   </header>
@@ -36,15 +37,16 @@
   <main>
     <section class="proj-hero">
       <div class="container">
-        <div class="breadcrumb"><a href="index.html">Home</a> / <a href="academic_projects.html">Academic</a> / Generative Design</div>
-        <h1>Generative Design for Structural Topology Optimisation</h1>
+        <div class="breadcrumb"><a href="index.html">Home</a> / <a href="academic_projects.html">Academic &amp; Research</a> / Generative Topology Optimisation</div>
+        <h1>Generative AI for Structural &amp; Thermal–Fluid Topology Optimisation</h1>
         <div class="meta">
-          <span class="tag">cGAN</span><span class="tag">Deep Learning</span><span class="tag">FEA</span>
-          <span class="tag">ABAQUS</span><span class="tag">MATLAB</span>
+          <span class="tag">Deep Learning</span><span class="tag">GANs / CNNs</span><span class="tag">Topology Optimisation</span>
+          <span class="tag">Darcy Thermal–Fluid Solver</span><span class="tag">Python · TensorFlow</span>
         </div>
         <p class="proj-lead">
-          An M.Tech project combining machine learning with finite-element analysis to generate optimal structural
-          layouts in seconds instead of hours.
+          My M.Tech research (under <strong>Prof. D. Sharma</strong>, IIT Guwahati): a generative-design framework
+          that learns to produce optimised material layouts directly — replacing slow iterative solvers with
+          <strong>deep-learning surrogates</strong>.
         </p>
       </div>
     </section>
@@ -54,52 +56,55 @@
 
         <div class="feature-row">
           <div class="feature-text">
-            <h3>Project overview</h3>
+            <h3>The problem</h3>
             <p>
-              This project introduces a framework that leverages machine learning to accelerate structural topology
-              optimisation. The goal was a generative model that predicts an optimal material layout for a given set of
-              boundary conditions and loads — drastically reducing the computational time required by traditional
-              iterative FEA.
+              Topology optimisation finds the best way to distribute material in a domain for a given load or flow —
+              but classical methods are <strong>iterative and expensive</strong>, re-solving a full physics problem
+              every step. The goal of this work is to learn that mapping once, then generate optimised designs in a
+              single forward pass.
             </p>
           </div>
           <div class="feature-media">
             <div class="media-placeholder" style="aspect-ratio:4/3;border-radius:var(--radius-sm);border:1px solid var(--border);">
-              <span class="icon"><i class="fas fa-diagram-project"></i></span><small>Concept image coming soon</small>
+              <span class="icon"><i class="fas fa-diagram-project"></i></span><small>Optimised layouts — coming soon</small>
             </div>
           </div>
         </div>
 
         <div class="feature-row reverse">
           <div class="feature-text">
-            <h3>Methodology &amp; tools</h3>
+            <h3>Approach</h3>
             <p>
-              A large dataset of optimised topologies was generated using <strong>ABAQUS</strong> and
-              <strong>MATLAB</strong>, then used to train a <strong>Conditional Generative Adversarial Network
-              (cGAN)</strong>. The trained model produces a highly efficient structural design in seconds — a process
-              that previously took hours of simulation. Results were validated by running FEA on the generated designs
-              to confirm structural integrity.
+              I generate training data from a <strong>2D Darcy-based thermal–fluid solver</strong> and structural
+              optimisation runs, then train <strong>deep-learning surrogates</strong> (CNN/GAN-style generative
+              models) to predict optimal topologies from the boundary conditions and loads.
+            </p>
+            <p>
+              The surrogate reaches an <strong>R² of 0.9998</strong> on structural topology-optimised datasets —
+              effectively reproducing the optimiser's output, near-instantly.
             </p>
           </div>
           <div class="feature-media">
             <div class="media-placeholder" style="aspect-ratio:4/3;border-radius:var(--radius-sm);border:1px solid var(--border);">
-              <span class="icon"><i class="fas fa-network-wired"></i></span><small>Process visual coming soon</small>
+              <span class="icon"><i class="fas fa-network-wired"></i></span><small>Model pipeline — coming soon</small>
             </div>
           </div>
         </div>
 
         <div class="feature-row" style="grid-template-columns:1fr;">
           <div class="feature-text">
-            <h3>Key achievements</h3>
+            <h3>Highlights</h3>
             <ul>
-              <li>Reduced design computation time by over <strong>95%</strong>.</li>
-              <li>Predicted topologies with <strong>98%</strong> structural-performance accuracy.</li>
-              <li>Built a framework generalisable across a variety of structural problems.</li>
+              <li><strong>R² 0.9998</strong> surrogate accuracy on generated structural topology datasets.</li>
+              <li>Custom <strong>2D Darcy thermal–fluid solver</strong> for generating thermal-flow optimisation data.</li>
+              <li>Generative pipeline that outputs optimised designs in a single pass, instead of hundreds of solver iterations.</li>
+              <li>Phase 2 focus: end-to-end <strong>thermal–fluid topology optimisation</strong> with DL surrogates.</li>
             </ul>
           </div>
         </div>
 
         <div class="center mt-lg">
-          <a href="academic_projects.html" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Back to Academic Projects</a>
+          <a href="academic_projects.html" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Back to Academic &amp; Research</a>
         </div>
       </div>
     </section>

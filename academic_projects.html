@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Academic Projects — Affan Khan</title>
-  <meta name="description" content="Academic engineering projects by Affan Khan — CFD solvers, generative design, biomedical devices, SAE Supra and SAE Aero." />
+  <title>Academic &amp; Research Projects — Affan Khan</title>
+  <meta name="description" content="Academic and research projects by Affan Khan — generative AI for topology optimisation, CFD solvers, a compliant bionic arm, and SAE Supra & Aero." />
   <link rel="icon" href="assets/img/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,15 +20,15 @@
     <div class="container nav">
       <a href="index.html" class="brand">
         <img src="assets/img/avatar.jpeg" alt="Affan Khan" />
-        <span>Affan Khan<small>Mechanical Engineer</small></span>
+        <span>Affan Khan<small>Computational Mechanics &amp; AI</small></span>
       </a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
       <ul class="nav-links">
         <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
         <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#accolades">Accolades</a></li>
         <li><a href="index.html#contact">Contact</a></li>
-        <li class="nav-cta"><a href="index.html#contact" class="btn btn-primary">Get in touch</a></li>
+        <li class="nav-cta"><a href="assets/docs/affan-khan-resume.pdf" target="_blank" rel="noopener" class="btn btn-primary">Résumé</a></li>
       </ul>
     </div>
   </header>
@@ -36,14 +36,25 @@
   <main>
     <section class="section">
       <div class="container">
-        <div class="breadcrumb"><a href="index.html">Home</a> / Academic Projects</div>
+        <div class="breadcrumb"><a href="index.html">Home</a> / Academic &amp; Research</div>
         <div class="section-head">
-          <span class="eyebrow">Academic Projects</span>
-          <h2>Work from my Master's &amp; Bachelor's</h2>
-          <p>Coursework, competition teams and research — from numerical solvers to biomedical devices.</p>
+          <span class="eyebrow">Academic &amp; Research</span>
+          <h2>Research, coursework &amp; competition teams</h2>
+          <p>From AI-driven design research to numerical solvers, biomedical devices and motorsport.</p>
         </div>
 
         <div class="grid grid-3">
+
+          <!-- Flagship: generative AI topology -->
+          <a href="acad_top_struct.html" class="card reveal">
+            <div class="card-media"><div class="media-placeholder"><span class="icon"><i class="fas fa-brain"></i></span><small>Generative design</small></div></div>
+            <div class="card-body">
+              <h3>Generative AI for Topology Optimisation</h3>
+              <p>M.Tech research — deep-learning surrogates for structural &amp; thermal–fluid topology optimisation (R² 0.9998).</p>
+              <div class="tags"><span class="tag">Deep Learning</span><span class="tag">GANs</span><span class="tag">Topology Opt.</span></div>
+              <span class="card-link">View project <span class="arrow">→</span></span>
+            </div>
+          </a>
 
           <!-- CFD solvers -->
           <a href="acad_cfd.html" class="card reveal">
@@ -56,24 +67,24 @@
             </div>
           </a>
 
-          <!-- Generative design -->
-          <a href="acad_top_struct.html" class="card reveal">
-            <div class="card-media"><div class="media-placeholder"><span class="icon"><i class="fas fa-diagram-project"></i></span><small>Visuals coming soon</small></div></div>
-            <div class="card-body">
-              <h3>Generative Design for Topology</h3>
-              <p>A cGAN that predicts optimal structural layouts in seconds instead of hours of FEA.</p>
-              <div class="tags"><span class="tag">cGAN</span><span class="tag">FEA</span><span class="tag">ABAQUS</span></div>
-              <span class="card-link">View project <span class="arrow">→</span></span>
-            </div>
-          </a>
-
-          <!-- Biomedical -->
+          <!-- Bionic arm -->
           <a href="acad_bio.html" class="card reveal">
             <div class="card-media"><div class="media-placeholder"><span class="icon"><i class="fas fa-hand"></i></span><small>Visuals coming soon</small></div></div>
             <div class="card-body">
               <h3>Compliant Bionic Arm</h3>
-              <p>A lightweight, 3D-printed compliant prosthetic arm driven by muscle signals — patent filed.</p>
+              <p>A lightweight, 3D-printed compliant prosthetic arm driven by muscle signals, with ESP32 PD control.</p>
               <div class="tags"><span class="tag">Compliant Mechanism</span><span class="tag">ESP32</span><span class="tag">3D Printing</span></div>
+              <span class="card-link">View project <span class="arrow">→</span></span>
+            </div>
+          </a>
+
+          <!-- Aero -->
+          <a href="acad_aero.html" class="card reveal">
+            <div class="card-media"><img src="assets/img/projects/aero/photo-1.jpg" alt="SAE Aero aircraft" /></div>
+            <div class="card-body">
+              <h3>SAE Aero Design Aircraft</h3>
+              <p>A 2 m-wingspan, 5 kg-payload aircraft — full fuselage &amp; wing CAD and CFD. All-India Rank 27.</p>
+              <div class="tags"><span class="tag">Aerodynamics</span><span class="tag">CFD</span><span class="tag">SolidWorks</span></div>
               <span class="card-link">View project <span class="arrow">→</span></span>
             </div>
           </a>
@@ -83,19 +94,8 @@
             <div class="card-media"><div class="media-placeholder"><span class="icon"><i class="fas fa-car-side"></i></span><small>Visuals coming soon</small></div></div>
             <div class="card-body">
               <h3>Supra SAE India</h3>
-              <p>Powertrain design &amp; manufacturing for a formula-style race car — 40+ CAD components.</p>
+              <p>Powertrain design &amp; manufacturing for a formula student car — sprocket, engine mounts and full assembly.</p>
               <div class="tags"><span class="tag">SolidWorks</span><span class="tag">FEA</span><span class="tag">Powertrain</span></div>
-              <span class="card-link">View project <span class="arrow">→</span></span>
-            </div>
-          </a>
-
-          <!-- Aero -->
-          <a href="acad_aero.html" class="card reveal">
-            <div class="card-media"><img src="assets/img/projects/aero/photo-1.jpg" alt="SAE Aero aircraft" /></div>
-            <div class="card-body">
-              <h3>SAE Aero Design UAV</h3>
-              <p>A 2 m-wingspan payload aircraft with fuselage design, CFD and a solar-endurance concept.</p>
-              <div class="tags"><span class="tag">Aerodynamics</span><span class="tag">ANSYS</span><span class="tag">Composites</span></div>
               <span class="card-link">View project <span class="arrow">→</span></span>
             </div>
           </a>

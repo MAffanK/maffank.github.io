@@ -9,20 +9,19 @@ CSS file, and a small vanilla JavaScript file. Open `index.html` in a browser to
 index.html                 Home (hero, featured work, categories, about, accolades, contact)
 academic_projects.html     Academic category listing
 personal_projects.html     Personal category listing
-acad_cfd.html              Project: CFD solvers
-acad_aero.html             Project: SAE Aero Design UAV
-acad_top_struct.html       Project: Generative design / topology
+acad_top_struct.html       Project: Generative AI for topology optimisation (flagship)
+acad_cfd.html              Project: CFD solvers from scratch
+acad_aero.html             Project: SAE Aero Design aircraft
 acad_bio.html              Project: Compliant bionic arm
 acad_supra.html            Project: Supra SAE India
-pers_turbine.html          Project: CFD + ML turbine pipeline
 
 assets/
   css/style.css            All styling (see "Changing the theme" below)
   css/fontawesome-all.min.css + webfonts/   icons (Font Awesome 5)
-  js/main.js               nav toggle, scroll reveal, accolades carousel
+  js/main.js               nav toggle, scroll reveal, accolades card deck
   img/                     logo, avatar, about, category tiles, accolades, projects/<name>/
   video/                   project videos
-  docs/                    certificate & report PDFs
+  docs/                    resume, certificate & report PDFs
 ```
 
 ## Changing the theme
@@ -35,13 +34,15 @@ below `:root`. A dark theme is also wired up — add `data-theme="dark"` to the
 
 ## Images still needed
 
-Three projects currently show "coming soon" placeholders because no images exist
-yet. Drop files into these folders and swap the placeholder `<div class="media-placeholder">…</div>`
+Several projects show "coming soon" placeholders because no images exist yet.
+Drop files into these folders and swap the placeholder `<div class="media-placeholder">…</div>`
 blocks for `<img>` tags:
 
-- `assets/img/projects/topology/`    — generative-design renders, FEA results
+- `assets/img/projects/topology/`    — generative-design renders, FEA/flow results
 - `assets/img/projects/bionic-arm/`  — gripper model, servo setup, stress contours, demo
-- `assets/img/projects/supra/`       — component CAD, chassis, track footage
+- `assets/img/projects/supra/`       — sprocket/engine-mount CAD, chassis, track footage
+- Personal projects (water-filling system, 3D-printed speaker) — add build photos
+  and link them in `personal_projects.html`.
 
-Also optional: a real **profile photo** for the hero/about, and a **resume PDF**
-(drop it in `assets/docs/` and link it from the hero button).
+Could also add separate write-up pages for the work experience (Coriolis flow
+meter, in-space 3D printer, underwater robot) if you want them as full case studies.

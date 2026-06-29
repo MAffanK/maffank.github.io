@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Personal Projects — Affan Khan</title>
-  <meta name="description" content="Self-driven engineering projects by Affan Khan, including a CFD + machine learning pipeline for turbine design." />
+  <title>Personal &amp; Hardware Projects — Affan Khan</title>
+  <meta name="description" content="Self-built hardware and IoT projects by Affan Khan — a WiFi-controlled automatic water-filling system with quality check, and a 3D-printed speaker." />
   <link rel="icon" href="assets/img/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,15 +20,15 @@
     <div class="container nav">
       <a href="index.html" class="brand">
         <img src="assets/img/avatar.jpeg" alt="Affan Khan" />
-        <span>Affan Khan<small>Mechanical Engineer</small></span>
+        <span>Affan Khan<small>Computational Mechanics &amp; AI</small></span>
       </a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
       <ul class="nav-links">
         <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
         <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#accolades">Accolades</a></li>
         <li><a href="index.html#contact">Contact</a></li>
-        <li class="nav-cta"><a href="index.html#contact" class="btn btn-primary">Get in touch</a></li>
+        <li class="nav-cta"><a href="assets/docs/affan-khan-resume.pdf" target="_blank" rel="noopener" class="btn btn-primary">Résumé</a></li>
       </ul>
     </div>
   </header>
@@ -36,24 +36,34 @@
   <main>
     <section class="section">
       <div class="container">
-        <div class="breadcrumb"><a href="index.html">Home</a> / Personal Projects</div>
+        <div class="breadcrumb"><a href="index.html">Home</a> / Personal &amp; Hardware</div>
         <div class="section-head">
-          <span class="eyebrow">Personal Projects</span>
+          <span class="eyebrow">Personal &amp; Hardware</span>
           <h2>Things I build on my own time</h2>
-          <p>Self-driven research and experiments — exploring where simulation, data and design meet.</p>
+          <p>Self-driven projects where electronics, code and fabrication meet — the hands-on side of my work.</p>
         </div>
 
         <div class="grid grid-3">
-          <a href="pers_turbine.html" class="card reveal">
-            <div class="card-media"><img src="assets/img/projects/turbine/tile.jpg" alt="CFD + ML turbine design" /></div>
+          <article class="card reveal">
+            <div class="card-media"><div class="media-placeholder"><span class="icon"><i class="fas fa-faucet-drip"></i></span><small>Visuals coming soon</small></div></div>
             <div class="card-body">
-              <h3>CFD + ML Turbine Pipeline</h3>
-              <p>Dynamic-mesh CFD coupled with a surrogate ML model to predict turbine efficiency 10× faster.</p>
-              <div class="tags"><span class="tag">ANSYS Fluent</span><span class="tag">Python</span><span class="tag">Surrogate ML</span></div>
-              <span class="card-link">View project <span class="arrow">→</span></span>
+              <h3>Smart Water-Filling System</h3>
+              <p>An automatic, <strong>WiFi-controlled</strong> water-filling rig with built-in water-quality checking — start, stop and monitor remotely.</p>
+              <div class="tags"><span class="tag">IoT</span><span class="tag">ESP / WiFi</span><span class="tag">Sensors</span><span class="tag">Automation</span></div>
             </div>
-          </a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-media"><div class="media-placeholder"><span class="icon"><i class="fas fa-volume-high"></i></span><small>Visuals coming soon</small></div></div>
+            <div class="card-body">
+              <h3>3D-Printed Speaker</h3>
+              <p>A custom speaker with a fully <strong>3D-printed enclosure</strong> — designed in CAD, printed and assembled from scratch.</p>
+              <div class="tags"><span class="tag">3D Printing</span><span class="tag">CAD</span><span class="tag">Audio</span></div>
+            </div>
+          </article>
         </div>
+
+        <p class="center" style="color:var(--text-muted);margin-top:32px;">More write-ups and build photos coming soon.</p>
 
         <div class="center mt-lg">
           <a href="index.html#work" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Back to home</a>
