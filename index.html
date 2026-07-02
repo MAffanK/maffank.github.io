@@ -6,13 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Affan Khan — Computational Mechanics &amp; AI</title>
   <meta name="description"
-    content="Affan Khan — Mechanical engineer (M.Tech, IIT Guwahati) in computational mechanics (CFD, FEM, optimization), now building deep-learning models that design and optimise physical systems. Patent holder with R&D experience across IIT Delhi, IISc and industry." />
+    content="Affan Khan — Mechanical engineer (M.Tech, IIT Guwahati) in computational mechanics (CFD, FEM, optimization), building deep-learning models that design and optimise physical systems. Patent holder with R&D experience across IIT Delhi, IISc and industry." />
 
   <link rel="icon" href="assets/img/logo.png" />
+  <script>
+    /* apply saved theme before CSS paints (dark is default) */
+    try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; } catch (e) { }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -25,7 +29,7 @@
     <div class="container nav">
       <a href="#top" class="brand">
         <img src="assets/img/avatar.jpeg" alt="Affan Khan" />
-        <span>Affan Khan<small>Computational Mechanics &amp; AI</small></span>
+        <span>Affan Khan<small>Computational Mechanics · AI</small></span>
       </a>
 
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
@@ -36,6 +40,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="life.html">Life</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><button class="theme-toggle" aria-label="Toggle light/dark theme"><i class="fas fa-sun"></i></button></li>
         <li class="nav-cta"><a href="assets/docs/affan-khan-resume.pdf" target="_blank" rel="noopener"
             class="btn btn-primary">Résumé</a></li>
       </ul>
@@ -47,49 +52,60 @@
     <!-- ============================ HERO ============================ -->
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-photo reveal"><img src="assets/img/pose.jpg" alt="Affan Khan" /></div>
         <div class="hero-inner">
-          <span class="pill"><i class="fas fa-graduation-cap"></i> M.Tech Computational Mechanics · IIT Guwahati</span>
+          <span class="pill"><i class="fas fa-graduation-cap"></i> M.Tech Computational Mechanics — IIT Guwahati</span>
           <h1>Engineering design,<br /><span class="accent">reimagined with AI.</span></h1>
           <p class="hero-sub">
             I'm a mechanical engineer rooted in computational mechanics — CFD, FEA and topology
-            optimisation — now building <strong>deep-learning models that design and optimise physical
-              systems</strong>. Patent holder, with R&amp;D experience across IIT Delhi, IISc and industry.
+            optimisation — building <strong>deep-learning models that design and optimise physical
+            systems</strong>. Patent holder, with R&amp;D experience across IIT Delhi, IISc and industry.
           </p>
           <div class="hero-actions">
             <a href="#work" class="btn btn-primary">View my work <i class="fas fa-arrow-right"></i></a>
             <a href="assets/docs/affan-khan-resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">
-              <i class="fas fa-file-download"></i> Download résumé
+              <i class="fas fa-file-download"></i> Résumé
             </a>
           </div>
 
           <div class="hero-stats">
             <div class="stat">
-              <div class="num">6+</div>
-              <div class="lbl">Projects</div>
+              <div class="num">0.9998</div>
+              <div class="lbl">R² — DL surrogate</div>
             </div>
             <div class="stat">
-              <div class="num">1</div>
+              <div class="num">01</div>
               <div class="lbl">Granted patent</div>
             </div>
             <div class="stat">
-              <div class="num">4</div>
+              <div class="num">04</div>
               <div class="lbl">R&amp;D / research roles</div>
             </div>
             <div class="stat">
-              <div class="num">27</div>
-              <div class="lbl">All-India rank, SAE Aero</div>
+              <div class="num">AIR 27</div>
+              <div class="lbl">SAE Aero Design</div>
             </div>
           </div>
         </div>
+
+        <div class="hero-photo reveal"><img src="assets/img/pose.jpg" alt="Affan Khan" /></div>
       </div>
     </section>
+
+    <!-- ========================= SKILL MARQUEE ========================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Python</span><span>TensorFlow</span><span>CFD</span><span>FEM</span><span>Topology Optimisation</span>
+        <span>GANs</span><span>ANSYS Fluent</span><span>SolidWorks</span><span>MATLAB</span><span>scikit-learn</span>
+        <span>Python</span><span>TensorFlow</span><span>CFD</span><span>FEM</span><span>Topology Optimisation</span>
+        <span>GANs</span><span>ANSYS Fluent</span><span>SolidWorks</span><span>MATLAB</span><span>scikit-learn</span>
+      </div>
+    </div>
 
     <!-- ========================= FEATURED WORK ========================= -->
     <section id="work" class="section">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Featured work</span>
+          <span class="eyebrow">01 — Featured Work</span>
           <h2>Where mechanics meets machine learning</h2>
           <p>A few highlights — from AI-driven design research to hands-on CFD and aircraft engineering.
             Browse everything by category below.</p>
@@ -139,7 +155,7 @@
         </div>
 
         <!-- Categories -->
-        <div class="section-head center reveal" style="margin-top:80px;">
+        <div class="section-head center reveal" style="margin-top:84px;">
           <span class="eyebrow">Browse by category</span>
           <h2>The full portfolio</h2>
         </div>
@@ -164,7 +180,7 @@
     <section id="experience" class="section section--tint">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Experience</span>
+          <span class="eyebrow">02 — Experience</span>
           <h2>R&amp;D across industry &amp; national labs</h2>
           <p>From underwater robotics to in-space manufacturing and precision instrumentation.</p>
         </div>
@@ -173,14 +189,14 @@
           <div class="tl-item">
             <div class="tl-head">
               <span class="tl-role">R&amp;D Engineer</span><span class="tl-org">SEDEMAC Mechatronics, Pune</span>
-              <span class="tl-date">Jul 2026 – Present</span>
+              <span class="tl-date">JUL 2026 — PRESENT</span>
             </div>
             <p>Design of electric machines.</p>
           </div>
           <div class="tl-item">
             <div class="tl-head">
               <span class="tl-role">Project Scientist</span><span class="tl-org">IIT Delhi</span>
-              <span class="tl-date">Oct 2023 – Jul 2024</span>
+              <span class="tl-date">OCT 2023 — JUL 2024</span>
             </div>
             <p>Designed and validated a Coriolis mass flow meter reaching <strong>99.9% measurement accuracy</strong>
               for high-precision industrial flow sensing.</p>
@@ -188,15 +204,15 @@
           <div class="tl-item">
             <div class="tl-head">
               <span class="tl-role">Project Associate</span><span class="tl-org">IISc Bangalore</span>
-              <span class="tl-date">Jul 2022 – Jun 2023</span>
+              <span class="tl-date">JUL 2022 — JUN 2023</span>
             </div>
-            <p>Built a pneumatically actuated resin 3D printer with a flexible printing arm, targeting <strong>in-space
-                manufacturing</strong>.</p>
+            <p>Built a pneumatically actuated resin 3D printer with a flexible printing arm, targeting
+              <strong>in-space manufacturing</strong>.</p>
           </div>
           <div class="tl-item">
             <div class="tl-head">
               <span class="tl-role">Design Engineer</span><span class="tl-org">Tow-Botics Systems (Remote)</span>
-              <span class="tl-date">Aug 2021 – Jun 2022</span>
+              <span class="tl-date">AUG 2021 — JUN 2022</span>
             </div>
             <p>Developed an underwater ship-maneuvering robot; ran ANSYS FEA for iterative structural optimisation,
               achieving a <strong>2× increase in load capacity</strong>.</p>
@@ -209,7 +225,7 @@
     <section id="about" class="section">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">About me</span>
+          <span class="eyebrow">03 — About Me</span>
           <h2>From CAD &amp; CFD to AI-driven design</h2>
         </div>
 
@@ -217,7 +233,7 @@
         <div class="about-row reveal">
           <div class="about-photo">
             <img src="assets/img/single.jpg" alt="Affan Khan on a podium" />
-            <p class="about-cap">On the podium at a symposium.</p>
+            <p class="about-cap">FIG. 02 — On the podium at a symposium.</p>
           </div>
           <div class="about-text">
             <p>
@@ -233,7 +249,7 @@
         <div class="about-row reverse reveal">
           <div class="about-photo">
             <img src="assets/img/about/about-1.jpg" alt="Presenting the bionic arm" />
-            <p class="about-cap">Presenting our bionic arm to my guide.</p>
+            <p class="about-cap">FIG. 03 — Presenting our bionic arm to my guide.</p>
           </div>
           <div class="about-text">
             <h3>Hands-on across many domains</h3>
@@ -251,7 +267,7 @@
         <div class="about-row reveal">
           <div class="about-photo">
             <img src="assets/img/about/isro_symposium.jpeg" alt="Affan Khan at an ISRO symposium" />
-            <p class="about-cap">Presenting at an ISRO symposium.</p>
+            <p class="about-cap">FIG. 04 — Presenting at an ISRO symposium.</p>
           </div>
           <div class="about-text">
             <h3>What I'm building toward</h3>
@@ -277,15 +293,17 @@
     <section id="accolades" class="section section--tint">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Accolades</span>
+          <span class="eyebrow">04 — Accolades</span>
           <h2>Patent &amp; certifications</h2>
-          <p>A selection of credentials and recognition. Click any card to open the certificate.</p>
+          <p>A selection of credentials and recognition. Scroll or click through — clicking a card opens the
+            certificate.</p>
         </div>
 
         <div class="deck reveal" id="accoladesDeck">
           <div class="deck-track">
             <a class="deck-card is-active" href="assets/docs/patent-certificate.pdf" target="_blank" rel="noopener">
-              <div class="deck-img"><img src="assets/img/accolades/patent.png" alt="Granted patent certificate" /></div>
+              <div class="deck-img"><img src="assets/img/accolades/patent.png" alt="Granted patent certificate" />
+              </div>
               <div class="deck-cap">
                 <h3>Granted Indian Patent</h3><small>No. 589444 · Cable-actuated 3D-printer arm</small><span
                   class="deck-hint">Open certificate <i class="fas fa-external-link-alt"></i></span>
@@ -317,8 +335,8 @@
             <a class="deck-card" href="assets/docs/merit.pdf" target="_blank" rel="noopener">
               <div class="deck-img"><img src="assets/img/accolades/merit.png" alt="Merit certificate" /></div>
               <div class="deck-cap">
-                <h3>Merit Certificate</h3><small>Academic recognition</small><span class="deck-hint">Open certificate <i
-                    class="fas fa-external-link-alt"></i></span>
+                <h3>Merit Certificate</h3><small>Academic recognition</small><span class="deck-hint">Open certificate
+                  <i class="fas fa-external-link-alt"></i></span>
               </div>
             </a>
           </div>
@@ -326,7 +344,8 @@
             <button class="deck-btn deck-prev" aria-label="Previous certificate"><i
                 class="fas fa-arrow-left"></i></button>
             <span class="deck-count"><b class="deck-now">1</b> / 5</span>
-            <button class="deck-btn deck-next" aria-label="Next certificate"><i class="fas fa-arrow-right"></i></button>
+            <button class="deck-btn deck-next" aria-label="Next certificate"><i
+                class="fas fa-arrow-right"></i></button>
           </div>
         </div>
       </div>
@@ -336,7 +355,7 @@
     <section id="contact" class="section">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Contact</span>
+          <span class="eyebrow">05 — Contact</span>
           <h2>Let's build something intelligent</h2>
           <p>Open to roles and collaborations at the intersection of mechanical engineering and AI.</p>
         </div>
@@ -362,8 +381,8 @@
           </div>
 
           <!-- CONTACT FORM
-               Now uses a simple mailto: clicking "Send" opens the visitor's email app with
-               the message pre-addressed to you, and it arrives in your Gmail once they send.
+               Uses a simple mailto: clicking "Send" opens the visitor's email app with
+               the message pre-addressed to you.
 
                TO HAVE SUBMISSIONS EMAILED TO YOU AUTOMATICALLY (recommended):
                  1) Sign up free at https://formspree.io
@@ -400,7 +419,7 @@
         <div class="footer-brand">
           <a href="#top" class="brand">
             <img src="assets/img/avatar.jpeg" alt="Affan Khan" />
-            <span>Affan Khan<small>Computational Mechanics &amp; AI</small></span>
+            <span>Affan Khan<small>Computational Mechanics · AI</small></span>
           </a>
           <p>Mechanical engineer building AI-driven tools for design, simulation and optimisation.</p>
           <div class="socials">

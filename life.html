@@ -7,9 +7,13 @@
   <title>Life — Affan Khan</title>
   <meta name="description" content="Beyond the engineer — Affan Khan's routine, gym, badminton, gaming, tinkering, anime and travel." />
   <link rel="icon" href="assets/img/logo.png" />
+  <script>
+    /* apply saved theme before CSS paints (dark is default) */
+    try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; } catch (e) { }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
@@ -29,6 +33,7 @@
         <li><a href="index.html#about">About</a></li>
         <li><a href="life.html" class="active">Life</a></li>
         <li><a href="index.html#contact">Contact</a></li>
+        <li><button class="theme-toggle" aria-label="Toggle light/dark theme"><i class="fas fa-sun"></i></button></li>
         <li class="nav-cta"><a href="assets/docs/affan-khan-resume.pdf" target="_blank" rel="noopener" class="btn btn-primary">Résumé</a></li>
       </ul>
     </div>
