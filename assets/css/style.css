@@ -1130,6 +1130,37 @@ a.card,
 }
 
 /* ---------------------------------------------------------------------
+   10b. LIFE PAGE
+   --------------------------------------------------------------------- */
+.hobby-ico {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 1.35rem;
+  margin: 22px 0 0 24px;
+}
+.hobby-card .card-body { padding-top: 14px; }
+
+/* routine timeline: time chip on the left of each entry */
+.tl-time {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: .25em .9em;
+  margin-bottom: 6px;
+}
+
+/* ---------------------------------------------------------------------
    11. CONTACT
    --------------------------------------------------------------------- */
 .contact-grid {
